@@ -5,6 +5,7 @@ import { Hero } from "./components/Hero";
 import { Grid } from "./components/Grid"
 
 export const getStoryblokApi = storyblokInit({
+  // register components here
   accessToken: process.env.NEXT_PUBLIC_STORYBLOK_TOKEN,
   use: [apiPlugin],
   components: {
