@@ -1,7 +1,7 @@
 import { apiPlugin, storyblokInit } from "@storyblok/react/rsc";
 import { Service } from "./components/Service";
 import { Page } from "./components/Page";
-import { Hero } from "./components/Hero";
+import Hero from "./components/Hero";
 import { Grid } from "./components/Grid"
 
 export const getStoryblokApi = storyblokInit({

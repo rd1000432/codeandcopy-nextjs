@@ -1,0 +1,8 @@
+@use "@/styles/helpers" as *;
+
+.headline {
+    @extend %h1;
+    color: $brand-secondary;
+    margin-bottom: 1rem;
+    text-align: center;
+}

@@ -1,0 +1,50 @@
+@use "sass:map";
+
+@use "@/styles/utilities/settings" as *;
+
+$break-mobile: map.get($breakpoints, sm);
+$break-tablet: map.get($breakpoints, md);
+$break-desktop: map.get($breakpoints, lg);
+$break-header-menu: map.get($breakpoints, header);
+
+@mixin widescreen-up {
+  @media screen and (min-width: $break-desktop) {
+    @content;
+  }
+}
+
+@mixin desktop-up {
+  @media screen and (min-width: $break-tablet) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (max-width: $break-desktop) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (max-width: $break-tablet) {
+    @content;
+  }
+}
+
+@mixin mobile-header {
+  @media screen and (max-width: $break-header-menu) {
+    @content;
+  }
+}
+
+@mixin mobile-up {
+  @media screen and (min-width: $break-mobile) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media screen and (max-width: $break-mobile) {
+    @content;
+  }
+}

@@ -1,0 +1,118 @@
+@use "../../node_modules/reset-css/reset.css" as *;
+
+@use "@/styles/helpers" as *;
+
+html,
+body {
+  --block-padding: #{$grid-4};
+  --text-padding: #{$grid-2};
+  --padding-xsm: #{$grid-4};
+  --padding-sm: #{$grid-6};
+  --padding-md: #{$grid-12};
+  --padding-lg: #{$grid-16};
+  --padding-xlg: #{$grid-32};
+  --spacing-xsm: #{$grid-2};
+  --spacing-sm: #{$grid-4};
+  --spacing-md: #{$grid-6};
+  --spacing-lg: #{$grid-8};
+  --spacing-xlg: #{$grid-16};
+  --margin-contained: #{$grid-10};
+  --col-gutter: #{$grid-6};
+  --row-gutter: #{$grid-10};
+  --content-height-sm: #{rem(400)};
+  --content-height-md: #{rem(600)};
+  --content-height-lg: #{rem(900)};
+  --module-content-height: #{rem(600)};
+
+  @include desktop {
+    --margin-contained: #{$grid-6};
+    --content-height-sm: #{rem(350)};
+    --content-height-md: #{rem(500)};
+    --content-height-lg: #{rem(700)};
+    --module-content-height: #{rem(500)};
+  }
+
+  @include tablet {
+    --padding-md: #{$grid-10};
+    --padding-lg: #{$grid-14};
+    --padding-xlg: #{$grid-20};
+    --margin-contained: #{$grid-5};
+    --col-gutter: #{$grid-5};
+    --row-gutter: #{$grid-9};
+    --content-height-sm: #{rem(250)};
+    --content-height-md: #{rem(350)};
+    --content-height-lg: #{rem(500)};
+    --module-content-height: #{rem(350)};
+  }
+
+  @include mobile {
+    --block-padding: #{$grid-5};
+    --text-padding: 0;
+    --padding-xsm: #{$grid-3};
+    --padding-sm: #{$grid-5};
+    --padding-md: #{$grid-8};
+    --padding-lg: #{$grid-12};
+    --padding-xlg: #{$grid-16};
+    --spacing-xsm: #{$grid-1};
+    --spacing-sm: #{$grid-3};
+    --spacing-md: #{$grid-5};
+    --spacing-lg: #{$grid-7};
+    --spacing-xlg: #{$grid-14};
+    --content-height-sm: #{rem(200)};
+    --content-height-md: #{rem(300)};
+    --content-height-lg: #{rem(300)};
+    --module-content-height: #{rem(220)};
+  }
+
+  margin: 0;
+  padding: 0;
+
+  color: $body-font-color;
+
+  /* stylelint-disable-next-line property-no-vendor-prefix */
+  -webkit-font-smoothing: antialiased;
+
+  // disable automatic font size adjustment on iOS devices
+  /* stylelint-disable-next-line property-no-vendor-prefix */
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  @extend %body-md;
+
+  font-family: $primary-font-family;
+  font-weight: $primary-font-weight;
+}
+
+h1 {
+  @extend %h1;
+}
+
+h2 {
+  @extend %h2;
+}
+
+h3 {
+  @extend %h3;
+}
+
+h4 {
+  @extend %h4;
+}
+
+h5 {
+  @extend %h5;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button {
+  padding: 0;
+}

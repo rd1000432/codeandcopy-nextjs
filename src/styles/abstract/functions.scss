@@ -1,0 +1,10 @@
+@function rem($value) {
+    $rem-value: ($value / 16) + rem;
+  
+    @return $rem-value;
+  }
+  
+  @function max-width-padding($max-width, $min-padding) {
+    @return max(calc(((100vw - $max-width) / 2) + $min-padding), $min-padding);
+  }
+  

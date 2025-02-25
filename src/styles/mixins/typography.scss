@@ -1,0 +1,170 @@
+/**
+* Typography mixins from desgin
+*/
+
+@use "../utilities/settings.scss" as *;
+@use "../abstract/functions" as *;
+@use "./media.scss" as *;
+
+%button-label {
+  font-size: rem(16);
+  line-height: 100%;
+}
+
+%menu-item {
+  @include mobile-header {
+    font-size: rem(28);
+  }
+
+  font-size: rem(16);
+  line-height: 100%;
+}
+
+%link-button {
+  @extend %button-label;
+
+  text-decoration: underline;
+}
+
+%h1-hero {
+  @include tablet {
+    font-size: rem(61);
+  }
+
+  @include mobile {
+    font-size: rem(51);
+  }
+
+  font-size: rem(76);
+  line-height: 100%;
+}
+
+%h1-hero-alt {
+  @extend %h1-hero;
+
+  font-family: $tertiary-font-family;
+  font-weight: $tertiary-font-weight;
+  line-height: 100%;
+}
+
+%h1 {
+  @include tablet {
+    font-size: rem(39);
+  }
+
+  font-size: rem(49);
+  line-height: 115%;
+}
+
+%h1-alt {
+  @extend %h1;
+
+  font-family: $tertiary-font-family;
+  font-weight: $tertiary-font-weight;
+  line-height: 100%;
+}
+
+%h2 {
+  @include tablet {
+    font-size: rem(31);
+  }
+
+  font-size: rem(39);
+  line-height: 115%;
+}
+
+%h2-alt {
+  @extend %h2;
+
+  font-family: $tertiary-font-family;
+  font-weight: $tertiary-font-weight;
+  line-height: 125%;
+}
+
+%h3 {
+  @include tablet {
+    font-size: rem(25);
+  }
+
+  font-size: rem(31);
+  line-height: 115%;
+}
+
+%h3-alt {
+  @extend %h3;
+
+  font-family: $tertiary-font-family;
+  font-weight: $tertiary-font-weight;
+}
+
+%h4 {
+  @include tablet {
+    font-size: rem(20);
+  }
+
+  font-size: rem(25);
+  line-height: 115%;
+}
+
+%h4-alt {
+  @extend %h4;
+
+  font-family: $tertiary-font-family;
+  font-weight: $tertiary-font-weight;
+}
+
+%h5 {
+  @include tablet {
+    font-size: rem(16);
+  }
+
+  font-size: rem(20);
+  line-height: 115%;
+}
+
+%h5-alt {
+  @extend %h5;
+
+  font-family: $tertiary-font-family;
+  font-weight: $tertiary-font-weight;
+}
+
+%body-xlg {
+  @extend %h3;
+
+  font-weight: $secondary-font-weight;
+}
+
+%body-lg {
+  @extend %h4;
+
+  font-weight: $secondary-font-weight;
+  line-height: 125%;
+}
+
+%body-md {
+  @extend %h5;
+
+  font-weight: $secondary-font-weight;
+  line-height: 130%;
+}
+
+%body-sm {
+  @include tablet {
+    font-size: rem(13);
+  }
+
+  font-size: rem(16);
+  font-weight: $secondary-font-weight;
+  line-height: 135%;
+}
+
+%body-xsm {
+  @include tablet {
+    font-size: rem(10);
+  }
+
+  font-size: rem(13);
+  font-weight: $secondary-font-weight;
+  line-height: 135%;
+}

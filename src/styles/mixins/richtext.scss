@@ -1,0 +1,29 @@
+/* stylelint-disable max-nesting-depth */
+@use "../abstract/functions.scss" as *;
+@use "../utilities/settings.scss" as *;
+
+%richtext {
+  ul {
+    margin-left: $padding-md;
+
+    list-style-type: disc;
+  }
+
+  ul li:has(p) {
+    font-weight: $body-font-weight;
+  }
+
+  ol {
+    margin-left: $padding-md;
+
+    list-style-type: decimal;
+  }
+
+  b {
+    font-weight: $bold-font-weight;
+  }
+
+  ol li:has(p) {
+    font-weight: $body-font-weight;
+  }
+}

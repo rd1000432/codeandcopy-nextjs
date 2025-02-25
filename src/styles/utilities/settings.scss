@@ -1,0 +1,189 @@
+/*
+* Our global style settings
+*
+* use to store global variables like colors, fonts, breakpoints, etc.
+* adapt according to the project's design / the clients CI/CD
+*/
+@use "sass:math";
+@use "sass:color";
+
+@use "../abstract/functions" as *;
+
+/*
+* Fonts and Typography
+*/
+// Fonts
+
+$primary-font-family: var(--font-figtree);
+$tertiary-font-family: var(--font-space-grotesk);
+$primary-font-weight: 500;
+$secondary-font-weight: 400;
+$tertiary-font-weight: 800;
+
+// Typography
+$body-font-size: 1rem;
+$body-line-height: 1.3;
+$body-font-weight: 400;
+$medium-font-weight: 500;
+$bold-font-weight: 700;
+
+/*
+* Colors
+*/
+// Base Colors
+$light: #fff;
+$dark: #000;
+$medium-light: #f2f2f2;
+$medium: #ddd;
+$medium-dark: #aaa;
+$dark-medium: #5f5f5e;
+
+// Brand Colors
+$brand-primary: #e0ff38;
+$brand-secondary: $dark;
+
+// Status Colors
+$brand-error: #fe3636;
+$brand-success: #008000;
+$brand-warn: #ffa500;
+
+// Transparent Colors
+$brand-transparent: rgba($brand-primary, 0.6);
+$dark-transparent: rgba($dark, 0.6);
+
+// Font Colors
+$body-font-color: $dark;
+$heading-color: $brand-primary;
+
+/*
+* Paddings & Sizes
+*/
+$paragraph-margin: $body-font-size * $body-line-height;
+
+// Content
+$text-max-width: rem(800);
+$content-max-width: rem(1280);
+
+/*
+* Breakpoints
+* TODO add mappy-breakpoints - use for mobile-first
+* https://www.npmjs.com/package/mappy-breakpoints
+* https://app.clickup.com/t/2615439/LXINT-6939
+*/
+$breakpoints: (
+  sm: 599px,
+  header: 820px,
+  md: 1023px,
+  lg: 1680px,
+  xl: 1920px,
+);
+
+// Named breakpoints
+$menu-breakpoint: lg;
+$column-breakpoint: md;
+$column-breakpoint-lg: lg;
+
+/*
+* Borders, Shadows and Radii
+*/
+$default-border: rem(2) solid $dark;
+$default-radius: rem(10);
+$default-shadow: rem(0 0 10) $dark-transparent;
+
+/*
+* Colors from Design
+*/
+
+$white-10: #ffffff1a;
+$white-20: #fff3;
+$white-30: #ffffff4d;
+$white-40: #fff6;
+$white-50: #ffffff80;
+$white-60: #fff9;
+$white-70: #ffffffb2;
+$white-80: #fffc;
+$white-90: #ffffffe5;
+$white-100: #fff;
+$gray-50: #fafafa;
+$gray-100: #f5f5f5;
+$gray-200: #ebebea;
+$gray-300: #d4d4d4;
+$gray-400: #bbbbba;
+$gray-500: #9e9e9d;
+$gray-600: #7b7b78;
+$gray-700: #6e6e6b;
+$gray-800: #5f5f5d;
+$gray-900: #4e4e4c;
+$gray-1000: #373736;
+$transparent: #fff0;
+$black-10: #1313131a;
+$black-20: #13131333;
+$black-30: #1313134d;
+$black-40: #13131366;
+$black-50: #13131380;
+$black-60: #13131399;
+$black-70: #131313b2;
+$black-80: #131313cc;
+$black-90: #131313e5;
+$black-100: #131313;
+$lime-600: #cdf00f;
+$lime-500: #e0ff38;
+$lime-700: #b7d60e;
+$external-linkedin: #0a66c2;
+
+/*
+* Spacings from Design
+*/
+$grid-1: rem(4);
+$grid-2: rem(8);
+$grid-3: rem(12);
+$grid-4: rem(16);
+$grid-5: rem(20);
+$grid-6: rem(24);
+$grid-7: rem(28);
+$grid-8: rem(32);
+$grid-9: rem(36);
+$grid-10: rem(40);
+$grid-11: rem(44);
+$grid-12: rem(48);
+$grid-13: rem(52);
+$grid-14: rem(56);
+$grid-15: rem(60);
+$grid-16: rem(64);
+$grid-17: rem(68);
+$grid-18: rem(72);
+$grid-19: rem(76);
+$grid-20: rem(80);
+$grid-22: rem(88);
+$grid-32: rem(128);
+$radius-sm: rem(4);
+$radius-md: rem(16);
+$radius-lg: rem(24);
+$radius-rounded: rem(999);
+
+/*
+* Paddings & Spacings from Design
+*/
+
+$block-padding: var(--block-padding);
+$text-padding: var(--text-padding);
+$padding-xsm: var(--padding-xsm);
+$padding-sm: var(--padding-sm);
+$padding-md: var(--padding-md);
+$padding-lg: var(--padding-lg);
+$padding-xlg: var(--padding-xlg);
+$spacing-xsm: var(--spacing-xsm);
+$spacing-sm: var(--spacing-sm);
+$spacing-md: var(--spacing-md);
+$spacing-lg: var(--spacing-lg);
+$spacing-xlg: var(--spacing-xlg);
+$margin-contained: var(--margin-contained);
+$col-gutter: var(--col-gutter);
+$row-gutter: var(--row-gutter);
+
+/**
+* z-index
+*/
+$sticky-button-z-index: 9;
+$footer-z-index: 99;
+$header-nav-z-index: 999;

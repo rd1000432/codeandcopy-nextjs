@@ -1,0 +1,37 @@
+/* stylelint-disable scss/function-no-unknown */
+@use "../mixins/media" as *;
+@use "../utilities/settings" as *;
+@use "../abstract/functions" as *;
+
+%layout {
+  padding-right: $margin-contained;
+  padding-left: $margin-contained;
+}
+
+@mixin grid($columns: 12, $columns-tablet: 8, $columns-mobile: 4, $column-repeat-value: "1fr") {
+  @media screen and (width <= 1440px) {
+    column-gap: 24px;
+  }
+
+  @include tablet {
+    column-gap: 16px;
+    grid-template-columns: repeat(#{$columns-tablet}, #{$column-repeat-value});
+  }
+
+  @include mobile {
+    grid-template-columns: repeat(#{$columns-mobile}, #{$column-repeat-value});
+  }
+
+  display: grid;
+
+  column-gap: 32px;
+
+  grid-template-columns: repeat(#{$columns}, #{$column-repeat-value});
+
+  row-gap: 0; /* stylelint-disable-line */
+}
+
+/** For backwards compatability */
+%grid-12 {
+  @include grid(12, 8, 4, 1fr);
+}
