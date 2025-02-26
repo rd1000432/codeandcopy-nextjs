@@ -5,6 +5,7 @@ const fetchHomePage = async () => {
   const client = getStoryblokApi();
   const response = await client.getStory(`home`, {
     version: "draft",
+    resolve_relations: "recommended_services.services",
   });
   return response.data.story;
 }
