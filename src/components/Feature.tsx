@@ -1,8 +1,18 @@
-export const Feature = (params: any) => {
+  interface FeatureBlok {
+    headline: string;
+    content: string;
+  }
+  
+  interface FeatureProps {
+    blok: FeatureBlok;
+  }
+  
+  export const Feature = ({ blok }: FeatureProps) => {
     return (
-        <div>
-            <h3>{params.blok.headline}</h3>
-            <p>{params.blok.content}</p>
-        </div>
+      <div>
+        <h3>{blok.headline}</h3>
+        <p>{blok.content}</p>
+      </div>
     );
-}
+  };
+  

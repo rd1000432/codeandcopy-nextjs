@@ -1,4 +1,3 @@
-import { renderRichText } from "@storyblok/react/rsc";
 import Richtext from "../RichtextSection/components/Richtext/Richtext";
 import styles from "./service.module.scss";
 
@@ -14,7 +13,7 @@ export const Service = (props: any) => {
                 __html: renderRichText(props.blok.body ?? ""),
             }}
         ></div> */}
-      <Richtext className={styles.description} text={props.blok.body} />
+        <Richtext className={styles.description} text={props.blok.body} />
 
         {/* <pre>{JSON.stringify(props, null, 2)}</pre> */}
         </main>

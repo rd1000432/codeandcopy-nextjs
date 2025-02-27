@@ -28,7 +28,7 @@ const ServicesPage = async () => {
         <StoryblokStory story={story} />
         <div className="grid md:grid-cols-2 gap-8 container mx-auto px-4 w-full py-16">
         {services?.map((service: any) => (
-          <RecommendedService story={service} key={service.content.uuid} />
+          <RecommendedService story={service} key={service.uuid} />
         ))}
         </div>
     </div>
