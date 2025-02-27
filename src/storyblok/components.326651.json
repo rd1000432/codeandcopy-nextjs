@@ -1,6 +1,46 @@
 {
   "components": [
     {
+      "name": "button_link",
+      "display_name": null,
+      "description": "",
+      "created_at": "2025-02-26T16:45:58.905Z",
+      "updated_at": "2025-02-26T17:06:08.867Z",
+      "id": 7012617,
+      "schema": {
+        "title": {
+          "type": "text",
+          "pos": 0,
+          "required": true,
+          "translatable": true,
+          "id": "uJD1ekkVSU-8EG3w4xoRow",
+          "max_length": 50
+        },
+        "link": {
+          "type": "multilink",
+          "pos": 1,
+          "show_anchor": true,
+          "allow_target_blank": true,
+          "id": "H_xa3LjdSLKTv1cZQakXCg"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "button_link",
+      "component_group_uuid": "all",
+      "color": "#2db47d",
+      "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "component_group_name": ""
+    },
+    {
       "name": "feature",
       "display_name": null,
       "description": null,
@@ -195,6 +235,43 @@
       "internal_tag_ids": [],
       "content_type_asset_preview": null,
       "component_group_name": "Nestable blocks"
+    },
+    {
+      "name": "richtext_section",
+      "display_name": null,
+      "description": "",
+      "created_at": "2025-02-26T14:07:26.056Z",
+      "updated_at": "2025-02-26T14:12:57.538Z",
+      "id": 7011317,
+      "schema": {
+        "anchor_id": {
+          "type": "text",
+          "pos": 0,
+          "id": "_qEChG4aRfm_OXtax7ZaRw",
+          "translatable": true
+        },
+        "text": {
+          "type": "text",
+          "pos": 1,
+          "id": "W0MuHZt5QKWmDgwFflzZUA",
+          "translatable": true
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "richtext_section",
+      "component_group_uuid": "all",
+      "color": "#2db47d",
+      "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "component_group_name": ""
     },
     {
       "name": "services",

@@ -1,0 +1,60 @@
+@use "@/styles/helpers.scss" as *;
+
+.icon {
+  flex-shrink: 0;
+
+  display: flex;
+
+  clip-path: polygon(0 0, 50% 0, 50% 100%, 0% 100%);
+
+  width: rem(47);
+
+  transition: all 0.2s linear;
+
+  color: var(--highlight-color);
+}
+
+.button {
+  @extend %button;
+
+  align-items: center;
+
+  display: flex;
+
+  width: fit-content;
+  padding-top: rem(12);
+  padding-bottom: rem(12);
+
+  color: $dark;
+
+  gap: rem(20);
+
+  &:hover {
+    text-decoration: none;
+
+    .icon {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+  }
+}
+
+.bordered {
+  @include mobile {
+    justify-content: center;
+    width: 100%;
+  }
+
+  border: 2px solid var(--highlight-color-transparent-light);
+  padding-right: $padding-lg;
+  padding-left: $padding-lg;
+}
+
+.light {
+  border-color: $light;
+  color: $light;
+}
+
+.highlight {
+  border-width: 1px;
+  border-color: var(--highlight-color);
+}

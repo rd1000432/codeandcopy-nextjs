@@ -8,13 +8,14 @@
     "start": "next start",
     "lint": "next lint",
     "dotenv-test": " dotenv cross-var \"echo STORYBLOK_SPACE_ID %STORYBLOK_SPACE_ID%\"",
-    "generate-sb-types:mac": "dotenv cross-var \"(cd src/storyblok/ && npx storyblok pull-components --space=%STORYBLOK_SPACE_ID%)  && (cd src/storyblok/ && npx storyblok-generate-ts source=components.%STORYBLOK_SPACE_ID%.json target=component-types-sb)\""
+    "generate-sb-types:mac": "cd src/storyblok/ && npx storyblok pull-components --space=326651 && npx storyblok-generate-ts source=components.326651.json target=component-types-sb"
   },
   "dependencies": {
     "@storyblok/react": "^4.4.0",
     "classnames": "^2.5.1",
     "dotenv-cli": "^8.0.0",
     "next": "15.1.7",
+    "next-intl": "^3.26.5",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "sass": "^1.85.0",
@@ -22,6 +23,7 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@tailwindcss/typography": "^0.5.16",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",

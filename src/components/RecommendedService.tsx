@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 
 export const RecommendedService = (props: any) => {
-    console.log(props.story);
+    // console.log(props.story);
     return (
         <div>
             <img src={props.story.content.main_image.filename} />

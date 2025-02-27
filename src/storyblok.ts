@@ -1,5 +1,5 @@
 import { apiPlugin, storyblokInit } from "@storyblok/react/rsc";
-import { Service } from "./components/Service";
+import { Service } from "./components/Service/Service";
 import { Page } from "./components/Page";
 import Hero from "./components/Hero";
 import { Grid } from "./components/Grid";
@@ -10,7 +10,7 @@ import  {RecommendedServices} from "./components/RecommendedServices";
 const cachedFetch = (input: any, init?: any): Promise<Response> => {
   return fetch(input, {
     ...init,
-    cache: "no-store",
+    cache: process.env.NODE_ENV === "development" ? "no-cache" : "force-cache",
   });
 }
 

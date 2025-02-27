@@ -1,0 +1,16 @@
+@use "@/styles/helpers" as *;
+
+.wrapper {
+  padding: 0 $margin-contained;
+
+  p {
+    margin-bottom: $spacing-md;
+  }
+
+  h2,
+  h3,
+  h4,
+  h5 {
+    margin-bottom: $spacing-xsm;
+  }
+}

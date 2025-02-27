@@ -1,0 +1,68 @@
+@use "@/styles/helpers" as *;
+
+.richtext {
+  @extend %richtext;
+
+  color: var(--text-med);
+
+  word-break: break-word;
+}
+
+.underline {
+  > * {
+    text-decoration: underline;
+  }
+}
+
+.italic {
+  &,
+  > * {
+    font-style: italic;
+  }
+}
+
+.highlight {
+  color: green;
+}
+
+.heading-01 {
+  p {
+    @extend %h1;
+  }
+}
+
+.heading-02 {
+  p {
+    @extend %h2;
+  }
+}
+
+.heading-03 {
+  p {
+    @extend %h3;
+  }
+}
+
+.heading-04 {
+  p {
+    @extend %h4;
+  }
+}
+
+.heading-05 {
+  p {
+    @extend %h5;
+  }
+}
+
+.space-grotesk {
+  font-family: $tertiary-font-family;
+  font-weight: $tertiary-font-weight;
+}
+
+.link {
+  cursor: pointer;
+  color: var(--text-high);
+  white-space: nowrap;
+  text-decoration: underline;
+}

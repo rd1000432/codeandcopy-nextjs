@@ -4,7 +4,7 @@ import { StoryblokStory } from "@storyblok/react/rsc";
 const fetchHomePage = async () => {
   const client = getStoryblokApi();
   const response = await client.getStory(`home`, {
-    version: "draft",
+    version: process.env.NODE_ENV === "development" ? "draft" : "published",
     resolve_relations: "recommended_services.services",
   });
   return response.data.story;

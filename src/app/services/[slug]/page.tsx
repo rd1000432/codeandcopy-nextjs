@@ -14,14 +14,15 @@ export const generateStaticParams = async () => {
 const fetchServicePage = async (slug: string) => {
   const client = getStoryblokApi();
   const response = await client.getStory(`services/${slug}`, {
-    version: "draft",
+    version: process.env.NODE_ENV === "development" ? "draft" : "published",
   });
   return response.data.story;
 };
 
-const ServicePage = async (props: any) => {
-  const story = await fetchServicePage(props.params.slug);
+const ServicePage = async ({ params }: { params: { slug: string } }) => {
+  const story = await fetchServicePage(params.slug);
   return <StoryblokStory story={story} />;
 };
+
 
 export default ServicePage;

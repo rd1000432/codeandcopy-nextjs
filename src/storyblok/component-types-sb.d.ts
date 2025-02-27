@@ -1,5 +1,37 @@
 import {StoryblokStory} from 'storyblok-generate-ts'
 
+export type MultilinkStoryblok =
+  | {
+      id?: string;
+      cached_url?: string;
+      anchor?: string;
+      linktype?: "story";
+      target?: "_self" | "_blank";
+      [k: string]: any;
+    }
+  | {
+      url?: string;
+      cached_url?: string;
+      anchor?: string;
+      linktype?: "asset" | "url";
+      target?: "_self" | "_blank";
+      [k: string]: any;
+    }
+  | {
+      email?: string;
+      linktype?: "email";
+      target?: "_self" | "_blank";
+      [k: string]: any;
+    };
+
+export interface ButtonLinkStoryblok {
+  title: string;
+  link?: Exclude<MultilinkStoryblok, {linktype?: "email"} | {linktype?: "asset"}>;
+  _uid: string;
+  component: "button_link";
+  [k: string]: any;
+}
+
 export interface FeatureStoryblok {
   headline: string;
   content: string;
@@ -37,6 +69,14 @@ export interface RecommendedServicesStoryblok {
   services: (StoryblokStory<ServicesStoryblok> | string)[];
   _uid: string;
   component: "recommended_services";
+  [k: string]: any;
+}
+
+export interface RichtextSectionStoryblok {
+  anchor_id?: string;
+  text?: string;
+  _uid: string;
+  component: "richtext_section";
   [k: string]: any;
 }
 
