@@ -1,4 +1,4 @@
-import { storyblokEditable } from "@storyblok/react";
+import { storyblokEditable } from "@storyblok/react/rsc";
 import type { FC } from "react";
 
 import { LinkWrapper } from "@/components/common";
