@@ -1,9 +1,9 @@
 import { storyblokEditable } from "@storyblok/react/rsc";
 import type { FC } from "react";
 
-import { LinkWrapper } from "@/components/common";
-import TextIconArrow from "../../icons/TextIconArrow.inline.svg";
-import TextIconStar from "../../icons/TextIconStar.inline.svg";
+// import { LinkWrapper } from "@/components/common";
+// import TextIconArrow from "../../icons/TextIconArrow.inline.svg";
+// import TextIconStar from "../../icons/TextIconStar.inline.svg";
 
 import type { TextIconStoryblok } from "@/storyblok/component-types-sb";
 import type { RichtextSectionStoryblok, MultilinkStoryblok } from "../../storyblok/component-types-sb";
@@ -13,8 +13,6 @@ import styles from "./texticon.module.scss";
 type LinkIcon = {
   _uid: string;
   icons_link: MultilinkStoryblok;
-  icon_left?: "arrow" | "star" | null;
-  icon_right?: "arrow" | "star" | null;
 };
 
 export type Props = TextIconStoryblok & {
