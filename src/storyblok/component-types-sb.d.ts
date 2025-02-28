@@ -63,7 +63,7 @@ export interface PageStoryblok {
     | HeroStoryblok
     | RecommendedServicesStoryblok
     | TestimonialStoryblok
-    | TextIconSectionStoryblok
+    | TextIconStoryblok
   )[];
   _uid: string;
   component: "page";
@@ -132,11 +132,10 @@ export interface TestimonialStoryblok {
   [k: string]: any;
 }
 
-export interface TextIconSectionStoryblok {
-  description?: RichtextStoryblok;
-  link_icons?: "" | "arrow" | "star";
-  icons_link?: Exclude<MultilinkStoryblok, {linktype?: "email"} | {linktype?: "asset"}>;
+export interface TextIconStoryblok {
+  description: RichtextStoryblok;
+  icons_link: Exclude<MultilinkStoryblok, {linktype?: "email"} | {linktype?: "asset"}>;
   _uid: string;
-  component: "text_icon_section";
+  component: "text_icon";
   [k: string]: any;
 }
