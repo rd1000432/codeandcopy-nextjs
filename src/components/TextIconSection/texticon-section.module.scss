@@ -1,0 +1,50 @@
+@use "@/styles/helpers.scss" as *;
+
+.texticon-wrapper {
+  @include mobile {
+    flex-direction: column;
+  }
+
+  justify-content: space-between;
+
+  display: flex;
+
+  overflow-x: hidden;
+
+  padding: $padding-lg $margin-contained $padding-xlg;
+
+  gap: $col-gutter;
+
+  .flexCol {
+    flex: 1 1 66.6666%;
+    display: flex;
+
+    &:nth-child(2) {
+      @include mobile {
+        order: -1;
+      }
+
+      flex: 1 1 33.3333%;
+    }
+  }
+
+  .icon-link {
+    margin-left: auto;
+  }
+}
+
+.icon {
+  @include tablet {
+    width: rem(96);
+    height: rem(96);
+  }
+
+  @include mobile {
+    width: rem(80);
+    height: rem(80);
+  }
+
+  width: rem(112);
+  height: rem(112);
+  color: var(--surface-highlight);
+}

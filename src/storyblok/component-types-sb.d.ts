@@ -57,7 +57,14 @@ export interface HeroStoryblok {
 }
 
 export interface PageStoryblok {
-  blocks?: (FeatureStoryblok | GridStoryblok | HeroStoryblok | RecommendedServicesStoryblok | TestimonialStoryblok)[];
+  blocks?: (
+    | FeatureStoryblok
+    | GridStoryblok
+    | HeroStoryblok
+    | RecommendedServicesStoryblok
+    | TestimonialStoryblok
+    | TextIconSectionStoryblok
+  )[];
   _uid: string;
   component: "page";
   uuid?: string;
@@ -122,5 +129,14 @@ export interface TestimonialStoryblok {
   comment: string;
   _uid: string;
   component: "testimonial";
+  [k: string]: any;
+}
+
+export interface TextIconSectionStoryblok {
+  description?: RichtextStoryblok;
+  link_icons?: "" | "arrow" | "star";
+  icons_link?: Exclude<MultilinkStoryblok, {linktype?: "email"} | {linktype?: "asset"}>;
+  _uid: string;
+  component: "text_icon_section";
   [k: string]: any;
 }

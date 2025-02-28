@@ -5,7 +5,8 @@ import Hero from "./components/Hero";
 import { Grid } from "./components/Grid";
 import { Feature } from "./components/Feature";
 import { Testimonial } from "./components/Testimonial";
-import  {RecommendedServices} from "./components/RecommendedServices";
+import { RecommendedServices } from "./components/RecommendedServices";
+import TextIconSection from "./components/TextIconSection";
 
 const cachedFetch = (input: any, init?: any): Promise<Response> => {
   return fetch(input, {
@@ -29,6 +30,7 @@ export const getStoryblokApi = storyblokInit({
     feature: Feature,
     testimonial: Testimonial,
     recommended_services: RecommendedServices,
+    text_icon_section: TextIconSection,
   },
   enableFallbackComponent: true,
 });
