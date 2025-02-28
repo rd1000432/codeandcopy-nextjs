@@ -58,7 +58,7 @@ const TextIconSection: FC<Props> = (blok) => {
           {Array.isArray(link_icons) &&
             link_icons.map((icon, index) => (
               <LinkWrapper
-                link={icon.icons_link}
+                link={icons_link}
                 key={icon._uid || index}
                 className={styles.iconLink}
               >
