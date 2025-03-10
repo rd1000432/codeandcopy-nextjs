@@ -136,6 +136,7 @@ export interface TestimonialStoryblok {
 export interface TextIconStoryblok {
   link_icons?: AssetStoryblok;
   description: RichtextStoryblok;
+  icon_link: Exclude<MultilinkStoryblok, {linktype?: "email"} | {linktype?: "asset"}>;
   _uid: string;
   component: "text_icon";
   [k: string]: any;

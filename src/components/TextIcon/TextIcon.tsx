@@ -1,6 +1,8 @@
 import { storyblokEditable } from "@storyblok/react/rsc";
 import type { FC } from "react";
+import Link from 'next/link';
 
+//TODO: Add LinkWrapper AND TextIconArrow AND TextIconStar HARD CODED
 // import { LinkWrapper } from "@/components/common";
 // import TextIconArrow from "../../icons/TextIconArrow.inline.svg";
 // import TextIconStar from "../../icons/TextIconStar.inline.svg";
@@ -21,7 +23,7 @@ export type Props = TextIconStoryblok & {
 };
 
 const TextIcon: FC<Props> = ({blok}) => {
-  const { link_icons, description } = blok;
+  const { link_icons, description, icon_link } = blok;
 
   console.log("blok:", link_icons);
   console.log("blok:", description);
@@ -44,7 +46,9 @@ const TextIcon: FC<Props> = ({blok}) => {
           />
         )}
         <div className={styles.flexCol}>
-          {link_icons && <p>test</p>}
+        <Link className={styles.iconLink} href={`/${icon_link[0].cached_url}`}>
+          {link_icons && <img className={styles.icon} src={link_icons.filename} />}
+        </Link>
         </div>
       </div>
     </section>

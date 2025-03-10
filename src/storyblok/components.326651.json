@@ -391,7 +391,7 @@
       "display_name": null,
       "description": "",
       "created_at": "2025-02-28T15:09:47.719Z",
-      "updated_at": "2025-03-10T10:59:54.318Z",
+      "updated_at": "2025-03-10T11:21:25.834Z",
       "id": 7024006,
       "schema": {
         "link_icons": {
@@ -408,6 +408,13 @@
           "required": true,
           "description": "lskdnvlksdnv lskdnvlksndlkvn lksndlvknlskdnv ",
           "id": "2uS9zcaoQImteHu2rpjMyA"
+        },
+        "icon_link": {
+          "type": "multilink",
+          "pos": 2,
+          "required": true,
+          "allow_target_blank": true,
+          "id": "JD9t_OB8Rc22LQc0qMXDwA"
         }
       },
       "image": null,
