@@ -241,7 +241,7 @@
       "display_name": null,
       "description": "",
       "created_at": "2025-02-26T14:07:26.056Z",
-      "updated_at": "2025-02-26T14:12:57.538Z",
+      "updated_at": "2025-03-10T10:53:56.214Z",
       "id": 7011317,
       "schema": {
         "anchor_id": {
@@ -265,13 +265,13 @@
       "all_presets": [],
       "preset_id": null,
       "real_name": "richtext_section",
-      "component_group_uuid": "all",
+      "component_group_uuid": "46060bef-a421-41d9-9c44-567227184725",
       "color": "#2db47d",
       "icon": null,
       "internal_tags_list": [],
       "internal_tag_ids": [],
       "content_type_asset_preview": null,
-      "component_group_name": ""
+      "component_group_name": "Nestable blocks"
     },
     {
       "name": "services",
@@ -391,7 +391,7 @@
       "display_name": null,
       "description": "",
       "created_at": "2025-02-28T15:09:47.719Z",
-      "updated_at": "2025-03-10T10:32:55.829Z",
+      "updated_at": "2025-03-10T10:59:54.318Z",
       "id": 7024006,
       "schema": {
         "link_icons": {
@@ -403,11 +403,11 @@
           "id": "9W6oAgXWROWfIdfiPRDkEA"
         },
         "description": {
-          "type": "text",
+          "type": "richtext",
           "pos": 1,
           "required": true,
-          "translatable": true,
-          "id": "xxg4MQ-tT3ugCb25CY2CvQ"
+          "description": "lskdnvlksdnv lskdnvlksndlkvn lksndlvknlskdnv ",
+          "id": "2uS9zcaoQImteHu2rpjMyA"
         }
       },
       "image": null,

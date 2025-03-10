@@ -6,11 +6,13 @@ import type { FC } from "react";
 // import TextIconStar from "../../icons/TextIconStar.inline.svg";
 
 import type { TextIconStoryblok } from "@/storyblok/component-types-sb";
+import type { RichtextSectionStoryblok, MultilinkStoryblok } from "../../storyblok/component-types-sb";
+import Richtext from "../RichtextSection/components/Richtext";
 import styles from "./texticon.module.scss";
 
 type LinkIcon = {
   _uid: string;
-
+  icons_link: MultilinkStoryblok;
 };
 
 export type Props = TextIconStoryblok & {
@@ -18,20 +20,31 @@ export type Props = TextIconStoryblok & {
   description?: any;
 };
 
-const TextIcon: FC<Props> = (blok) => {
-  const { description } = blok;
+const TextIcon: FC<Props> = ({blok}) => {
+  const { link_icons, description } = blok;
 
-  console.log("blok:", blok);
-  console.log("description:", description);
+  console.log("blok:", link_icons);
+  console.log("blok:", description);
+
 
   return (
     <section {...storyblokEditable(blok)} className={styles.wrapper}>
       <div className={styles.texticonWrapper}>
-          <p
+        {description && (
+          <Richtext
             className={styles.flexCol}
-          >test</p>
+            text={
+              {
+                _uid: blok._uid,
+                content: description,
+                font_size: "heading-02",
+                component: "richtext_section",
+              } as RichtextSectionStoryblok
+            }
+          />
+        )}
         <div className={styles.flexCol}>
-          <p>test</p>
+          {link_icons && <p>test</p>}
         </div>
       </div>
     </section>
