@@ -1,6 +1,6 @@
 @use "@/styles/helpers.scss" as *;
 
-.texticon-wrapper {
+.texticonWrapper {
   @include mobile {
     flex-direction: column;
   }
@@ -31,7 +31,7 @@
     }
   }
 
-  .icon-link {
+  .iconLink {
     margin-left: auto;
   }
 }

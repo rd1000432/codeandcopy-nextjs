@@ -1,16 +1,11 @@
-"use client";
-
 import { storyblokEditable } from "@storyblok/react/rsc";
 import type { FC } from "react";
-import { useEffect, useState } from "react";
-
 
 // import { LinkWrapper } from "@/components/common";
 // import TextIconArrow from "../../icons/TextIconArrow.inline.svg";
 // import TextIconStar from "../../icons/TextIconStar.inline.svg";
 
 import type { TextIconStoryblok } from "@/storyblok/component-types-sb";
-
 import styles from "./texticon.module.scss";
 
 type LinkIcon = {
@@ -24,20 +19,20 @@ export type Props = TextIconStoryblok & {
 };
 
 const TextIcon: FC<Props> = (blok) => {
-  const [clientDescription, setClientDescription] = useState<any>(null);
+  const { description } = blok;
 
-  useEffect(() => {
-    setClientDescription(blok.description);
-  }, [blok.description]);
+  console.log("blok:", blok);
+  console.log("description:", description);
 
   return (
     <section {...storyblokEditable(blok)} className={styles.wrapper}>
       <div className={styles.texticonWrapper}>
-        {clientDescription ? (
-          <pre>{JSON.stringify(clientDescription, null, 2)}</pre>
-        ) : (
-          <p>⚠️ No description available</p>
-        )}
+          <p
+            className={styles.flexCol}
+          >test</p>
+        <div className={styles.flexCol}>
+          <p>test</p>
+        </div>
       </div>
     </section>
   );

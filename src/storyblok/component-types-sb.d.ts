@@ -133,8 +133,8 @@ export interface TestimonialStoryblok {
 }
 
 export interface TextIconStoryblok {
-  description: RichtextStoryblok;
   link_icons?: AssetStoryblok;
+  description: string;
   _uid: string;
   component: "text_icon";
   [k: string]: any;
