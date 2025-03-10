@@ -1,3 +1,5 @@
+"use client";
+
 import { storyblokEditable } from "@storyblok/react/rsc";
 import type { FC } from "react";
 import { useEffect, useState } from "react";
