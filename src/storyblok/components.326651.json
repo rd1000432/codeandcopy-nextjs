@@ -391,7 +391,7 @@
       "display_name": null,
       "description": "",
       "created_at": "2025-02-28T15:09:47.719Z",
-      "updated_at": "2025-02-28T15:11:12.211Z",
+      "updated_at": "2025-02-28T15:30:13.232Z",
       "id": 7024006,
       "schema": {
         "description": {
@@ -401,13 +401,13 @@
           "max_length": 500,
           "id": "YyBYrZOSReWBYMtHgEkdZw"
         },
-        "icons_link": {
-          "type": "multilink",
+        "link_icons": {
+          "type": "asset",
           "pos": 1,
-          "required": true,
-          "show_anchor": true,
-          "allow_target_blank": true,
-          "id": "ol1L4e1mTRmFlNAc3xry0g"
+          "filetypes": [
+            "images"
+          ],
+          "id": "9W6oAgXWROWfIdfiPRDkEA"
         }
       },
       "image": null,
