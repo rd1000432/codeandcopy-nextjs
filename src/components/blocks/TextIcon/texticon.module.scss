@@ -1,11 +1,22 @@
 @use "@/styles/helpers.scss" as *;
 
+.wrapper {
+  @include mobile {
+    padding-top: 0;
+    padding-bottom: $padding-xlg;
+  }
+
+  flex-direction: column;
+  display: flex;
+  padding: var(--padding-xlg) var(--margin-contained) calc(var(--padding-xlg) - var(--padding-sm)) var(--margin-contained);
+}
+
 .texticonWrapper {
   @include mobile {
     flex-direction: column;
   }
 
-  border: 2px solid green;
+  border: 2px solid $body-font-color;
 
   justify-content: space-between;
 
@@ -45,9 +56,12 @@
   @include mobile {
     width: rem(80);
     height: rem(80);
+    border: 3px solid purple;
   }
 
   width: rem(112);
   height: rem(112);
   color: var(--surface-highlight);
 }
+
+

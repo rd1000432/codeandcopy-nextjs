@@ -40,11 +40,107 @@ export interface FeatureStoryblok {
   [k: string]: any;
 }
 
+export interface FooterStoryblok {
+  items?: (FooterItemStoryblok | FooterItemLinkStoryblok)[];
+  _uid: string;
+  component: "footer";
+  [k: string]: any;
+}
+
+export interface FooterItemStoryblok {
+  title?: string;
+  links?: FooterItemLinkStoryblok[];
+  _uid: string;
+  component: "footer_item";
+  [k: string]: any;
+}
+
+export interface FooterItemLinkStoryblok {
+  title?: string;
+  link?: Exclude<MultilinkStoryblok, {linktype?: "email"} | {linktype?: "asset"}>;
+  _uid: string;
+  component: "footer_item_link";
+  [k: string]: any;
+}
+
+export interface GlobalStoryblok {
+  global?: (
+    | ButtonLinkStoryblok
+    | FeatureStoryblok
+    | FooterStoryblok
+    | FooterItemStoryblok
+    | FooterItemLinkStoryblok
+    | GlobalStoryblok
+    | GridStoryblok
+    | HeaderStoryblok
+    | HeaderItemLinkStoryblok
+    | HeaderMenuItemStoryblok
+    | HeroStoryblok
+    | PageStoryblok
+    | RecommendedServicesStoryblok
+    | RichtextSectionStoryblok
+    | ServicesStoryblok
+    | TestimonialStoryblok
+    | TextIconStoryblok
+  )[];
+  _uid: string;
+  component: "global";
+  uuid?: string;
+  [k: string]: any;
+}
+
 export interface GridStoryblok {
   headline?: string;
   items: (FeatureStoryblok | TestimonialStoryblok)[];
   _uid: string;
   component: "grid";
+  [k: string]: any;
+}
+
+export interface AssetStoryblok {
+  _uid?: string;
+  id: number | null;
+  alt: string | null;
+  name: string;
+  focus: string | null;
+  source: string | null;
+  title: string | null;
+  filename: string;
+  copyright: string | null;
+  fieldtype?: string;
+  meta_data?: null | {
+    [k: string]: any;
+  };
+  is_external_url?: boolean;
+  [k: string]: any;
+}
+
+export interface HeaderStoryblok {
+  logo?: AssetStoryblok;
+  homepage_link?: Exclude<MultilinkStoryblok, {linktype?: "email"} | {linktype?: "asset"}>;
+  logo_small?: AssetStoryblok;
+  items?: HeaderMenuItemStoryblok[];
+  menu_items?: HeaderMenuItemStoryblok[];
+  test?: string;
+  _uid: string;
+  component: "Header";
+  [k: string]: any;
+}
+
+export interface HeaderItemLinkStoryblok {
+  title?: string;
+  link?: Exclude<MultilinkStoryblok, {linktype?: "email"} | {linktype?: "asset"}>;
+  _uid: string;
+  component: "header_item_link";
+  [k: string]: any;
+}
+
+export interface HeaderMenuItemStoryblok {
+  title?: string;
+  link?: Exclude<MultilinkStoryblok, {linktype?: "email"} | {linktype?: "asset"}>;
+  sub_items?: HeaderItemLinkStoryblok[];
+  _uid: string;
+  component: "header_menu_item";
   [k: string]: any;
 }
 
@@ -60,6 +156,8 @@ export interface PageStoryblok {
   blocks?: (
     | FeatureStoryblok
     | GridStoryblok
+    | HeaderItemLinkStoryblok
+    | HeaderMenuItemStoryblok
     | HeroStoryblok
     | RecommendedServicesStoryblok
     | RichtextSectionStoryblok
@@ -85,24 +183,6 @@ export interface RichtextSectionStoryblok {
   text?: string;
   _uid: string;
   component: "richtext_section";
-  [k: string]: any;
-}
-
-export interface AssetStoryblok {
-  _uid?: string;
-  id: number | null;
-  alt: string | null;
-  name: string;
-  focus: string | null;
-  source: string | null;
-  title: string | null;
-  filename: string;
-  copyright: string | null;
-  fieldtype?: string;
-  meta_data?: null | {
-    [k: string]: any;
-  };
-  is_external_url?: boolean;
   [k: string]: any;
 }
 

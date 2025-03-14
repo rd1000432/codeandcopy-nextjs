@@ -8,7 +8,7 @@ import Link from 'next/link';
 // import TextIconStar from "../../icons/TextIconStar.inline.svg";
 
 import type { TextIconStoryblok } from "@/storyblok/component-types-sb";
-import type { RichtextSectionStoryblok, MultilinkStoryblok } from "../../storyblok/component-types-sb";
+import type { RichtextSectionStoryblok, MultilinkStoryblok } from "../../../storyblok/component-types-sb";
 import Richtext from "../RichtextSection/components/Richtext";
 import styles from "./texticon.module.scss";
 
@@ -24,10 +24,6 @@ export type Props = TextIconStoryblok & {
 
 const TextIcon: FC<Props> = ({blok}) => {
   const { link_icons, description, icon_link } = blok;
-
-  console.log("blok:", link_icons);
-  console.log("blok:", description);
-
 
   return (
     <section {...storyblokEditable(blok)} className={styles.wrapper}>
@@ -46,7 +42,7 @@ const TextIcon: FC<Props> = ({blok}) => {
           />
         )}
         <div className={styles.flexCol}>
-        <Link className={styles.iconLink} href={`/${icon_link[0].cached_url}`}>
+        <Link className={styles.iconLink} href={`/${icon_link.cached_url}`}>
           {link_icons && <img className={styles.icon} src={link_icons.filename} />}
         </Link>
         </div>

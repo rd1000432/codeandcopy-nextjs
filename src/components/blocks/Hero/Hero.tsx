@@ -1,6 +1,6 @@
 import { storyblokEditable } from "@storyblok/react/rsc";
 import { type FC } from "react";
-import { HeroStoryblok } from "../../storyblok/component-types-sb";
+import { HeroStoryblok } from "@/storyblok/component-types-sb";
 import styles from "./hero.module.scss"; 
 
 export type Props = {blok: HeroStoryblok;}

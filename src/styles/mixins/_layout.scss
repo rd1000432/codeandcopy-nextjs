@@ -1,7 +1,7 @@
 /* stylelint-disable scss/function-no-unknown */
-@use "../mixins/media" as *;
-@use "../utilities/settings" as *;
-@use "../abstract/functions" as *;
+@use "../mixins/media.scss" as *;
+@use "../utilities/settings.scss" as *;
+@use "../abstract/functions.scss" as *;
 
 %layout {
   padding-right: $margin-contained;

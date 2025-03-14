@@ -1,12 +1,13 @@
 import { apiPlugin, storyblokInit } from "@storyblok/react/rsc";
-import { Service } from "./components/Service/Service";
-import { Page } from "./components/Page";
-import Hero from "./components/Hero";
-import { Grid } from "./components/Grid";
-import { Feature } from "./components/Feature";
-import { Testimonial } from "./components/Testimonial";
-import { RecommendedServices } from "./components/RecommendedServices";
-import TextIcon from "./components/TextIcon";
+import { Service } from "./components/blocks/Service";
+import { Page } from "./components/blocks/Page";
+import Hero from "./components/blocks/Hero";
+import { Grid } from "./components/blocks/Grid";
+import { Feature } from "./components/blocks/Feature";
+import { Testimonial } from "./components/blocks/Testimonial";
+import { RecommendedServices } from "./components/blocks/RecommendedServices";
+import TextIcon from "./components/blocks/TextIcon";
+import Header  from "./components/global/Header";
 
 const cachedFetch = (input: any, init?: any): Promise<Response> => {
   return fetch(input, {
@@ -31,6 +32,7 @@ export const getStoryblokApi = storyblokInit({
     testimonial: Testimonial,
     recommended_services: RecommendedServices,
     text_icon: TextIcon,
+    header: Header,
   },
   enableFallbackComponent: true,
 });

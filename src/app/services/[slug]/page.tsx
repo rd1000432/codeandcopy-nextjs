@@ -28,7 +28,6 @@ interface PageProps {
 }
 
 const ServicePage = async ({ params }: PageProps) => {
-  console.log("ServicePage", params);
   // Await params to ensure it's resolved before accessing slug
   const resolvedParams = await params;
 

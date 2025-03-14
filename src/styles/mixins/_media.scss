@@ -1,6 +1,6 @@
 @use "sass:map";
 
-@use "@/styles/utilities/settings" as *;
+@use "../../styles/utilities/settings.scss" as *;
 
 $break-mobile: map.get($breakpoints, sm);
 $break-tablet: map.get($breakpoints, md);

@@ -1,0 +1,10 @@
+@use "@/styles/helpers.scss" as *;
+
+.description {
+    font-weight: $bold-font-weight;
+    font-family: $primary-font-family !important;
+}
+
+.test {
+   font-family: $primary-font-family !important;
+}

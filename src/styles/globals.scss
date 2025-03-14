@@ -1,6 +1,6 @@
 @use "../../node_modules/reset-css/reset.css" as *;
 
-@use "@/styles/helpers" as *;
+@use "./helpers" as *;
 
 html,
 body {

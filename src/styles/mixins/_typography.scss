@@ -3,7 +3,7 @@
 */
 
 @use "../utilities/settings.scss" as *;
-@use "../abstract/functions" as *;
+@use "../abstract/functions.scss" as *;
 @use "./media.scss" as *;
 
 %button-label {

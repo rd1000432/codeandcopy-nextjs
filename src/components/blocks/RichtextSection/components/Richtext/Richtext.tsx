@@ -3,7 +3,7 @@ import cn from "classnames";
 import type { FC } from "react";
 import { render } from "storyblok-rich-text-react-renderer";
 import { LinkWrapper } from "@/components/common";
-import { isRichtextEmpty } from "../../../../helpers/isRichtextEmpty";
+import { isRichtextEmpty } from "@/helpers/isRichtextEmpty";
 import type {
   ButtonLinkStoryblok,
   RichtextSectionStoryblok,
