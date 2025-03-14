@@ -14,7 +14,6 @@ const Header: FC<Props> = ({ blok }) => {
     logo,
     homepage_link,
     logo_small,
-    items = [],
     menu_items = [],
   } = blok;
 
@@ -45,28 +44,7 @@ const Header: FC<Props> = ({ blok }) => {
 
       {/* Navigation Menu */}
       <nav className={styles.nav}>
-        <ul>
-          {/* Render items (if they exist) */}
-          {items.map((item) => (
-            <li key={item._uid} className={styles.navItem}>
-              <Link href={item.link?.cached_url || "#"}>
-                {item.title}
-              </Link>
-              {/* Render sub-items (if they exist) */}
-              {item.sub_items && item.sub_items.length > 0 && (
-                <ul className={styles.subMenu}>
-                  {item.sub_items.map((subItem) => (
-                    <li key={subItem._uid} className={styles.subMenuItem}>
-                      <Link href={subItem.link?.cached_url || "#"}>
-                        {subItem.title}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </li>
-          ))}
-
+        <ul>  
           {/* Render menu_items (if they exist) */}
           {menu_items.map((menuItem) => (
             <li key={menuItem._uid} className={styles.navItem}>

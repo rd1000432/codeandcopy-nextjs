@@ -119,9 +119,7 @@ export interface HeaderStoryblok {
   logo?: AssetStoryblok;
   homepage_link?: Exclude<MultilinkStoryblok, {linktype?: "email"} | {linktype?: "asset"}>;
   logo_small?: AssetStoryblok;
-  items?: HeaderMenuItemStoryblok[];
   menu_items?: HeaderMenuItemStoryblok[];
-  test?: string;
   _uid: string;
   component: "Header";
   [k: string]: any;
@@ -138,7 +136,6 @@ export interface HeaderItemLinkStoryblok {
 export interface HeaderMenuItemStoryblok {
   title?: string;
   link?: Exclude<MultilinkStoryblok, {linktype?: "email"} | {linktype?: "asset"}>;
-  sub_items?: HeaderItemLinkStoryblok[];
   _uid: string;
   component: "header_menu_item";
   [k: string]: any;
