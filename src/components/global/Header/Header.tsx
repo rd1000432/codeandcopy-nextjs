@@ -51,18 +51,6 @@ const Header: FC<Props> = ({ blok }) => {
               <Link href={menuItem.link?.cached_url || "#"}>
                 {menuItem.title}
               </Link>
-              {/* Render sub-items (if they exist) */}
-              {menuItem.sub_items && menuItem.sub_items.length > 0 && (
-                <ul className={styles.subMenu}>
-                  {menuItem.sub_items.map((subItem) => (
-                    <li key={subItem._uid} className={styles.subMenuItem}>
-                      <Link href={subItem.link?.cached_url || "#"}>
-                        {subItem.title}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              )}
             </li>
           ))}
         </ul>
