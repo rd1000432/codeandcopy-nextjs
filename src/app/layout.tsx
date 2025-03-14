@@ -61,7 +61,7 @@ export default async function RootLayout({
         >
           {/* Render the Header */}
           {headerContent ? (
-            <Header blok={headerContent} />
+            <Header blok={headerContent} isDraftMode={isEnabled} />
           ) : (
             <div>Loading Header...</div>
           )}

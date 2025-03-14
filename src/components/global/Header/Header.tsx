@@ -1,33 +1,38 @@
+'use client'
 import { storyblokEditable } from "@storyblok/react/rsc";
 import type { FC } from "react";
 import type { HeaderStoryblok } from "@/storyblok/component-types-sb";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./header.module.scss";
+import { useHeader } from "./hooks/useHeader";
+import HeaderNavigation from "./components/HeaderNavigation";
+import BurgerButton from "./components/BurgerButton";
 
-type Props = {
+type HeaderProps = {
   blok: HeaderStoryblok;
+  isDraftMode: boolean;
+  homepage_link?: { cached_url: string };
+  logo?: { filename: string; alt?: string };
+  logo_small?: { filename: string; alt?: string };
 };
 
-const Header: FC<Props> = ({ blok }) => {
-  const {
-    logo,
-    homepage_link,
-    logo_small,
-    menu_items = [],
-  } = blok;
+const Header: FC<HeaderProps> = props => {
+  const { blok, isDraftMode, logo_small} = props;
+  const { isMobileMenuOpen, toggleMenu } = useHeader();
+
 
   return (
-    <header {...storyblokEditable(blok)} className={styles.wrapper}>
+    <header {...storyblokEditable(blok)} className={styles.header}>
       {/* Logo */}
       <div className={styles.logo}>
-        <Link href={homepage_link?.cached_url || "/"}>
-          {logo && (
+        <Link className={styles.logoLink} href={blok.homepage_link?.cached_url || "/"}>
+          {blok.logo && (
             <Image
-              src={logo.filename}
-              alt={logo.alt || "Logo"}
-              width={150} // Adjust as needed
-              height={50} // Adjust as needed
+              src={blok.logo.filename}
+              alt={blok.logo.alt || "Logo"}
+              width={150}
+              height={50} 
               priority
             />
           )}
@@ -36,25 +41,18 @@ const Header: FC<Props> = ({ blok }) => {
           <Image
             src={logo_small.filename}
             alt={logo_small.alt || "Small Logo"}
-            width={50} // Adjust as needed
-            height={50} // Adjust as needed
+            width={50}
+            height={50} 
           />
         )}
       </div>
-
+      <BurgerButton onClick={toggleMenu} isOpen={isMobileMenuOpen} />
       {/* Navigation Menu */}
-      <nav className={styles.nav}>
-        <ul>  
-          {/* Render menu_items (if they exist) */}
-          {menu_items.map((menuItem) => (
-            <li key={menuItem._uid} className={styles.navItem}>
-              <Link href={menuItem.link?.cached_url || "#"}>
-                {menuItem.title}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </nav>
+      <HeaderNavigation
+          blok={blok}
+          isMobileMenuOpen={isMobileMenuOpen}
+          isDraftMode={isDraftMode}
+        />
     </header>
   );
 };

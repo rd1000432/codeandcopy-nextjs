@@ -1,0 +1,151 @@
+@use "@/styles/helpers" as *;
+
+%header-link {
+  transition: border 0.3s ease-in-out;
+
+  &::after {
+    display: block;
+    opacity: 0;
+    transform: scaleX(0);
+
+    border-bottom: solid 1px black; //var(--main-color)
+
+    transition:
+      transform 0.3s ease-out,
+      opacity 0.3s ease-out;
+
+    content: "";
+    transform-origin: 0% 50%;
+  }
+
+  &:hover {
+    &::after {
+      opacity: 1;
+      transform: scaleX(1);
+    }
+  }
+}
+
+.headerNavigation {
+  @include mobile-header {
+    position: fixed;
+    flex-direction: column;
+
+    display: flex;
+    visibility: hidden;
+    transform: translateX(100%);
+
+    overflow-y: scroll;
+
+    margin-top: $grid-18;
+    padding: $padding-lg $margin-contained;
+
+    transition: 0.3s ease;
+
+    inset: 0;
+    overscroll-behavior: contain;
+
+    &.open {
+      visibility: visible;
+      transform: translateX(0);
+      background-color: blue; //var(--bg-color)
+    }
+  }
+
+  @include mobile {
+    margin-top: $grid-16;
+  }
+}
+
+.subMenu {
+  @include mobile-header {
+    position: relative;
+
+    opacity: 1;
+    transform: unset;
+
+    overflow: hidden;
+
+    width: 100%;
+    height: 0;
+    padding: 0;
+
+    inset: 0;
+  }
+
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  display: flex;
+  opacity: 0;
+  transform: translateY(calc(100% + $padding-lg));
+
+  width: fit-content;
+
+  transition: 0.3s;
+
+  pointer-events: none;
+}
+
+.link {
+  @extend %header-link;
+  @extend %menu-item;
+
+  position: relative;
+  width: fit-content;
+  color: var(--main-color);
+
+  &:hover {
+    .sub-menu {
+      @include mobile-header {
+        transform: unset;
+        height: fit-content;
+      }
+
+      opacity: 1;
+      transform: translateY(100%);
+
+      pointer-events: all;
+    }
+  }
+}
+
+.navigationList {
+  @include mobile-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  align-items: center;
+  justify-content: flex-end;
+  display: flex;
+
+  gap: $grid-14;
+}
+
+.active {
+  border-bottom: 1px solid var(--main-color);
+}
+
+.footerLinks {
+  @include mobile-header {
+    display: flex;
+
+    gap: $spacing-md;
+  }
+
+  display: none;
+}
+
+.legalLinks {
+  @extend %button-label;
+
+  flex-direction: column;
+
+  a {
+    @extend %header-link;
+
+    width: fit-content;
+  }
+}
