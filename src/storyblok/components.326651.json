@@ -265,7 +265,7 @@
       "display_name": null,
       "description": "",
       "created_at": "2025-03-11T13:04:13.856Z",
-      "updated_at": "2025-03-14T12:20:47.679Z",
+      "updated_at": "2025-03-14T13:26:58.280Z",
       "id": 7069053,
       "schema": {
         "logo": {
@@ -294,7 +294,8 @@
           "restrict_components": true,
           "component_whitelist": [
             "header_menu_item"
-          ]
+          ],
+          "maximum": 6
         }
       },
       "image": null,
@@ -312,41 +313,6 @@
       "internal_tag_ids": [],
       "content_type_asset_preview": null,
       "component_group_name": ""
-    },
-    {
-      "name": "header_item_link",
-      "display_name": null,
-      "description": "",
-      "created_at": "2025-03-14T09:49:31.331Z",
-      "updated_at": "2025-03-14T09:50:10.119Z",
-      "id": 7086650,
-      "schema": {
-        "title": {
-          "type": "text",
-          "pos": 0,
-          "id": "t222f5qsQJqJ2QCzoTY9Og"
-        },
-        "link": {
-          "type": "multilink",
-          "pos": 1,
-          "id": "nnwZJcFkTRC8AOkc_tmyuQ"
-        }
-      },
-      "image": null,
-      "preview_field": null,
-      "is_root": false,
-      "preview_tmpl": null,
-      "is_nestable": true,
-      "all_presets": [],
-      "preset_id": null,
-      "real_name": "header_item_link",
-      "component_group_uuid": "46060bef-a421-41d9-9c44-567227184725",
-      "color": "#2db47d",
-      "icon": null,
-      "internal_tags_list": [],
-      "internal_tag_ids": [],
-      "content_type_asset_preview": null,
-      "component_group_name": "Nestable blocks"
     },
     {
       "name": "header_menu_item",

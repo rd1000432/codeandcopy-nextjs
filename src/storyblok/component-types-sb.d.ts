@@ -73,7 +73,6 @@ export interface GlobalStoryblok {
     | GlobalStoryblok
     | GridStoryblok
     | HeaderStoryblok
-    | HeaderItemLinkStoryblok
     | HeaderMenuItemStoryblok
     | HeroStoryblok
     | PageStoryblok
@@ -125,14 +124,6 @@ export interface HeaderStoryblok {
   [k: string]: any;
 }
 
-export interface HeaderItemLinkStoryblok {
-  title?: string;
-  link?: Exclude<MultilinkStoryblok, {linktype?: "email"} | {linktype?: "asset"}>;
-  _uid: string;
-  component: "header_item_link";
-  [k: string]: any;
-}
-
 export interface HeaderMenuItemStoryblok {
   title?: string;
   link?: Exclude<MultilinkStoryblok, {linktype?: "email"} | {linktype?: "asset"}>;
@@ -153,7 +144,6 @@ export interface PageStoryblok {
   blocks?: (
     | FeatureStoryblok
     | GridStoryblok
-    | HeaderItemLinkStoryblok
     | HeaderMenuItemStoryblok
     | HeroStoryblok
     | RecommendedServicesStoryblok

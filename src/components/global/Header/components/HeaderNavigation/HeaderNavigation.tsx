@@ -5,6 +5,8 @@ import { usePathname } from "next/navigation";
 import { type FC, useRef } from "react";
 
 import { getIsActive } from "@/helpers/getIsActive";
+import { stripHome } from "@/helpers/stripHome";
+
 import type { HeaderStoryblok } from "@/storyblok/component-types-sb";
 
 // import LanguageSwitcher from "../LanguageSwitcher";
@@ -15,64 +17,38 @@ const HeaderNavigation: FC<{
   blok: HeaderStoryblok;
   isMobileMenuOpen?: boolean;
   isDraftMode?: boolean;
-}> = ({ blok, isMobileMenuOpen}) => {
-  const menuItemLinkRef = useRef<(HTMLElement | null)[]>([]);
+}> = ({ blok, isMobileMenuOpen }) => {
   const pathName = usePathname();
 
+  const normalizeUrl = (url: string) => {
+    if (!url) return "/";
+    const strippedUrl = stripHome(url);
+  
+    // Ensure it starts with a leading slash
+    const absoluteUrl = strippedUrl.startsWith("/") ? strippedUrl : `/${strippedUrl}`;
+  
+    return absoluteUrl === "" ? "/" : absoluteUrl; // Ensures "/" remains if `/home` was the only thing in the URL
+  };
+  
+  
+
   return (
+  
     <nav className={cn(styles.headerNavigation, { [styles.open]: isMobileMenuOpen })}>
-      <ul className={styles["navigationList"]}>
+      <ul className={styles.navigationList}>
         {!!blok.menu_items?.length &&
-          blok.menu_items.map((item, index) => {
-            return (
-              <li
-                key={item._uid}
-                className={cn(styles.link, {
-                  [styles.active]: getIsActive(pathName, item.link?.cached_url || "", blok),
-                })}
-              >
-                <Link
-                  href={item.link!.cached_url || ""}
-                  ref={(element: HTMLAnchorElement | null) => { menuItemLinkRef.current[index] = element; }}
-                  key={index}
-                >
-                  {item.title}
-                </Link>
-              </li>
-            );
-          })}
-        {/* <LanguageSwitcher version={isDraftMode ? "draft" : "published"} /> */}
-        {/* <div className={cn(styles.footerLinks, styles.legalLinks)}>
-          {footer.legal_links?.map((link, index) => (
-            <LinkWrapper
-              link={link.link!}
-              forwardRef={element => (menuItemLinkRef.current[index] = element)}
-              key={index}
+          blok.menu_items.map((item) => (
+            <li
+              key={item._uid}
+              className={cn(styles.link, {
+              [styles.active]: getIsActive(pathName, normalizeUrl(item.link?.cached_url || ""), item)
+                            })}
             >
-              {link.title}
-            </LinkWrapper>
+              <Link href={normalizeUrl(item.link?.cached_url || "")}>
+                {item.title}
+              </Link>
+            </li>
           ))}
-        </div> */}
-        {/* <div className={cn(styles.footerLinks, styles.socialLinks)}>
-          {footer.social_links?.map((link, index) =>
-            link.link && link.icon ? (
-              <LinkWrapper
-                link={link.link!}
-                forwardRef={element => (menuItemLinkRef.current[index] = element)}
-                key={index}
-              >
-                <LXImage
-                  src={link.icon.filename}
-                  alt={link.icon.alt ?? ""}
-                  width={24}
-                  height={24}
-                  role="presentation"
-                  objectFit="cover"
-                />
-              </LinkWrapper>
-            ) : null
-          )}
-        </div> */}
       </ul>
     </nav>
   );

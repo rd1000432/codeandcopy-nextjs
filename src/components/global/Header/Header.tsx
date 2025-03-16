@@ -8,6 +8,8 @@ import styles from "./header.module.scss";
 import { useHeader } from "./hooks/useHeader";
 import HeaderNavigation from "./components/HeaderNavigation";
 import BurgerButton from "./components/BurgerButton";
+import { stripHome } from "@/helpers/stripHome";
+
 
 type HeaderProps = {
   blok: HeaderStoryblok;
@@ -20,14 +22,23 @@ type HeaderProps = {
 const Header: FC<HeaderProps> = props => {
   const { blok, isDraftMode, logo_small} = props;
   const { isMobileMenuOpen, toggleMenu } = useHeader();
+  const normalizeUrl = (url: string) => {
+    if (!url) return "/";
+    const strippedUrl = stripHome(url);
+  
+    // Ensure it starts with a leading slash
+    const absoluteUrl = strippedUrl.startsWith("/") ? strippedUrl : `/${strippedUrl}`;
+  
+    return absoluteUrl === "" ? "/" : absoluteUrl; // Ensures "/" remains if `/home` was the only thing in the URL
+  };
 
 
   return (
     <header {...storyblokEditable(blok)} className={styles.header}>
       {/* Logo */}
       <div className={styles.logo}>
-        <Link className={styles.logoLink} href={blok.homepage_link?.cached_url || "/"}>
-          {blok.logo && (
+      <Link className={styles.logoLink} href={normalizeUrl(blok.homepage_link?.cached_url || "/")}>
+      {blok.logo && (
             <Image
               src={blok.logo.filename}
               alt={blok.logo.alt || "Logo"}
