@@ -2,7 +2,7 @@
 
 import cn from "classnames";
 import { usePathname } from "next/navigation";
-import { type FC, useRef } from "react";
+import { type FC } from "react"; // useRef
 
 import { getIsActive } from "@/helpers/getIsActive";
 import { stripHome } from "@/helpers/stripHome";
