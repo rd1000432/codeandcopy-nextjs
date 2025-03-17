@@ -1,0 +1,19 @@
+@use "@/styles/helpers" as *;
+
+.item {
+  flex-direction: column;
+  display: flex;
+  color: $light;
+
+  gap: $spacing-lg;
+}
+
+.headline {
+  @extend %h1;
+
+  color: $white-100;
+}
+
+.footerButton {
+  @extend %button-label;
+}

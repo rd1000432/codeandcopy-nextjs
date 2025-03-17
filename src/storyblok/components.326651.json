@@ -82,19 +82,49 @@
       "display_name": null,
       "description": "",
       "created_at": "2025-03-11T16:23:28.342Z",
-      "updated_at": "2025-03-14T09:32:39.755Z",
+      "updated_at": "2025-03-17T12:35:25.502Z",
       "id": 7069971,
       "schema": {
-        "items": {
-          "type": "bloks",
+        "footer_logo": {
+          "type": "asset",
           "pos": 0,
-          "id": "iaq-iyhtTuaZvQyh7h9GWQ",
+          "id": "io8mq3YTT_mlRYUn-dV4ow"
+        },
+        "main_column": {
+          "type": "bloks",
+          "pos": 1,
           "restrict_type": "",
           "restrict_components": true,
           "component_whitelist": [
-            "footer_item",
-            "footer_item_link"
+            "footer_item"
+          ],
+          "id": "C573ezz7R3OHSB5hfqfPbg"
+        },
+        "social_links": {
+          "type": "bloks",
+          "pos": 2,
+          "restrict_type": "",
+          "restrict_components": true,
+          "id": "PC6rhotWQGm0iq2yd6gVVw",
+          "component_whitelist": [
+            "social_link"
           ]
+        },
+        "legal_links": {
+          "type": "bloks",
+          "pos": 3,
+          "id": "eyotW3YgR1OaJrNE2GUIRw",
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "legal_link"
+          ]
+        },
+        "copyright": {
+          "type": "text",
+          "pos": 4,
+          "required": true,
+          "id": "t5-l1SKdTdC5jsNCbkFXKQ"
         }
       },
       "image": null,
@@ -117,23 +147,29 @@
       "display_name": null,
       "description": "",
       "created_at": "2025-03-11T16:31:30.189Z",
-      "updated_at": "2025-03-14T09:48:41.938Z",
+      "updated_at": "2025-03-17T12:35:09.699Z",
       "id": 7069973,
       "schema": {
-        "title": {
+        "headline_line_one": {
           "type": "text",
           "pos": 0,
-          "id": "z2yo4lWfT6C3zAaARkWJEg"
+          "id": "cVlG55q5QDSWBa8qlO7brA"
         },
-        "links": {
-          "type": "bloks",
+        "headline_line_two": {
+          "type": "text",
           "pos": 1,
-          "id": "41Yn5HVcS5ShmNxZYt5kpw",
+          "id": "IsKixPdsQTWy5QgwnmKujg"
+        },
+        "call_to_action": {
+          "type": "bloks",
+          "pos": 2,
+          "maximum": 1,
           "restrict_type": "",
           "restrict_components": true,
           "component_whitelist": [
-            "footer_item_link"
-          ]
+            "button_link"
+          ],
+          "id": "NV9P_tLvTXyRPSYbkM2KjA"
         }
       },
       "image": null,
@@ -192,12 +228,12 @@
       "display_name": null,
       "description": "",
       "created_at": "2025-03-11T16:10:41.621Z",
-      "updated_at": "2025-03-11T16:17:26.275Z",
+      "updated_at": "2025-03-17T12:02:18.537Z",
       "id": 7069931,
       "schema": {
         "global": {
           "type": "bloks",
-          "pos": 0,
+          "pos": 3,
           "id": "gqONnD8HTvu_18Geq6UsAg"
         }
       },
@@ -265,7 +301,7 @@
       "display_name": null,
       "description": "",
       "created_at": "2025-03-11T13:04:13.856Z",
-      "updated_at": "2025-03-14T13:26:58.280Z",
+      "updated_at": "2025-03-17T11:27:21.132Z",
       "id": 7069053,
       "schema": {
         "logo": {
@@ -276,19 +312,19 @@
             "images"
           ]
         },
-        "homepage_link": {
-          "type": "multilink",
-          "pos": 1,
-          "id": "8h21mIiGR2iEZdnLIfN5fA"
-        },
         "logo_small": {
           "type": "asset",
-          "pos": 2,
+          "pos": 1,
           "id": "CnQOTnySTxaRHZuJtCVhQg"
+        },
+        "homepage_link": {
+          "type": "multilink",
+          "pos": 2,
+          "id": "8h21mIiGR2iEZdnLIfN5fA"
         },
         "menu_items": {
           "type": "bloks",
-          "pos": 4,
+          "pos": 3,
           "id": "hrHpy25HTRGgOX6SIkALlQ",
           "restrict_type": "",
           "restrict_components": true,
@@ -385,6 +421,41 @@
       "internal_tag_ids": [],
       "content_type_asset_preview": null,
       "component_group_name": "Nestable blocks"
+    },
+    {
+      "name": "legal_link",
+      "display_name": null,
+      "description": "",
+      "created_at": "2025-03-17T12:09:41.758Z",
+      "updated_at": "2025-03-17T12:09:52.681Z",
+      "id": 7094557,
+      "schema": {
+        "link": {
+          "type": "multilink",
+          "pos": 0,
+          "id": "jYyMgkTBQGmC1LlrHna9pQ"
+        },
+        "title": {
+          "type": "text",
+          "pos": 1,
+          "id": "0aAfj6eMTzuVRDcA_PRsJw"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "legal_link",
+      "component_group_uuid": "all",
+      "color": null,
+      "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "component_group_name": ""
     },
     {
       "name": "page",
@@ -571,6 +642,49 @@
       "real_name": "services",
       "component_group_uuid": "all",
       "color": null,
+      "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "component_group_name": ""
+    },
+    {
+      "name": "social_link",
+      "display_name": null,
+      "description": "",
+      "created_at": "2025-03-17T12:07:15.895Z",
+      "updated_at": "2025-03-17T12:41:18.954Z",
+      "id": 7094553,
+      "schema": {
+        "link": {
+          "type": "multilink",
+          "pos": 0,
+          "id": "Z6l8WloPTUCHctv_SY530w"
+        },
+        "title": {
+          "type": "text",
+          "pos": 1,
+          "id": "Cvc-dTAVQ3u61LT89UL5OA"
+        },
+        "icon": {
+          "type": "asset",
+          "pos": 2,
+          "id": "JhH8hWk0SgS5B6OMBOn3Vg",
+          "filetypes": [
+            "images"
+          ]
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "social_link",
+      "component_group_uuid": "all",
+      "color": "#2db47d",
       "icon": null,
       "internal_tags_list": [],
       "internal_tag_ids": [],

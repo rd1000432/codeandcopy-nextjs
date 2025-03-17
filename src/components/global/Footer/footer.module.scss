@@ -1,0 +1,159 @@
+@use "@/styles/helpers" as *;
+
+.footer {
+  position: relative;
+  z-index: $footer-z-index;
+  background-color: $black-100;
+}
+
+.content {
+  @include mobile {
+    padding-bottom: 0;
+  }
+
+  padding-top: $padding-lg;
+  padding-bottom: $padding-xlg;
+}
+
+.columns {
+  @extend %layout;
+
+  @include tablet {
+    gap: $spacing-xlg;
+  }
+
+  @include mobile {
+    grid-template-columns: 1fr;
+  }
+
+  display: grid;
+
+  grid-template-columns: 4fr 1fr;
+}
+
+.column {
+  @include tablet {
+    grid-column: span 1;
+  }
+
+  @include mobile {
+    gap: $padding-sm;
+    grid-column: span 3;
+  }
+
+  flex-direction: column;
+  display: flex;
+
+  gap: $padding-lg;
+
+  grid-column: span 1;
+}
+
+.bottomLine {
+  @extend %layout;
+
+  @include tablet {
+    flex-direction: column;
+    padding: $padding-sm;
+    padding-top: $spacing-xlg;
+
+    gap: $padding-lg;
+  }
+
+  @include mobile {
+    gap: $row-gutter;
+  }
+
+  display: flex;
+  padding-bottom: $padding-lg;
+  background-color: $black-100;
+  color: $white-100;
+}
+
+.copyright {
+  @extend %body-xsm;
+
+  @include tablet {
+    flex-direction: row-reverse;
+    order: 999;
+    margin-right: 0;
+  }
+
+  display: flex;
+
+  margin-right: $spacing-lg;
+  padding-right: rem(5);
+
+  color: $gray-500;
+  line-height: $body-line-height;
+}
+
+.legalLinks {
+  @include tablet {
+    flex-flow: wrap;
+    justify-content: flex-end;
+    margin-right: 0;
+    padding-right: 0;
+  }
+
+  @include mobile {
+    gap: $spacing-lg;
+  }
+
+  display: flex;
+  margin-right: $spacing-xlg;
+  margin-left: auto;
+
+  gap: $spacing-xlg;
+}
+
+.socialLinks {
+  @include tablet {
+    flex-direction: row-reverse;
+    margin-top: 0;
+
+    gap: $spacing-md;
+  }
+
+  display: flex;
+  margin-top: rem(-8);
+
+  gap: $padding-sm;
+}
+
+.footerIcon {
+  margin-left: auto;
+}
+
+.legalLink {
+  position: relative;
+
+  color: $white-100;
+  font-size: rem(14);
+  line-height: rem(14);
+  text-transform: unset;
+  text-decoration: none;
+
+  &::after {
+    @include tablet {
+      bottom: 0;
+    }
+
+    position: absolute;
+    bottom: rem(7);
+    left: 0;
+
+    width: 0%;
+    height: rem(1);
+
+    transition: width 0.3s ease;
+
+    background-color: $white-100;
+
+    content: "";
+  }
+
+  &:hover::after {
+    width: 100%;
+  }
+}

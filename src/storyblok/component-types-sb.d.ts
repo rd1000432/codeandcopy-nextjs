@@ -40,16 +40,39 @@ export interface FeatureStoryblok {
   [k: string]: any;
 }
 
+export interface AssetStoryblok {
+  _uid?: string;
+  id: number | null;
+  alt: string | null;
+  name: string;
+  focus: string | null;
+  source: string | null;
+  title: string | null;
+  filename: string;
+  copyright: string | null;
+  fieldtype?: string;
+  meta_data?: null | {
+    [k: string]: any;
+  };
+  is_external_url?: boolean;
+  [k: string]: any;
+}
+
 export interface FooterStoryblok {
-  items?: (FooterItemStoryblok | FooterItemLinkStoryblok)[];
+  footer_logo?: AssetStoryblok;
+  main_column?: FooterItemStoryblok[];
+  social_links?: SocialLinkStoryblok[];
+  legal_links?: LegalLinkStoryblok[];
+  copyright: string;
   _uid: string;
   component: "footer";
   [k: string]: any;
 }
 
 export interface FooterItemStoryblok {
-  title?: string;
-  links?: FooterItemLinkStoryblok[];
+  headline_line_one?: string;
+  headline_line_two?: string;
+  call_to_action?: ButtonLinkStoryblok[];
   _uid: string;
   component: "footer_item";
   [k: string]: any;
@@ -75,10 +98,12 @@ export interface GlobalStoryblok {
     | HeaderStoryblok
     | HeaderMenuItemStoryblok
     | HeroStoryblok
+    | LegalLinkStoryblok
     | PageStoryblok
     | RecommendedServicesStoryblok
     | RichtextSectionStoryblok
     | ServicesStoryblok
+    | SocialLinkStoryblok
     | TestimonialStoryblok
     | TextIconStoryblok
   )[];
@@ -96,28 +121,10 @@ export interface GridStoryblok {
   [k: string]: any;
 }
 
-export interface AssetStoryblok {
-  _uid?: string;
-  id: number | null;
-  alt: string | null;
-  name: string;
-  focus: string | null;
-  source: string | null;
-  title: string | null;
-  filename: string;
-  copyright: string | null;
-  fieldtype?: string;
-  meta_data?: null | {
-    [k: string]: any;
-  };
-  is_external_url?: boolean;
-  [k: string]: any;
-}
-
 export interface HeaderStoryblok {
   logo?: AssetStoryblok;
-  homepage_link?: Exclude<MultilinkStoryblok, {linktype?: "email"} | {linktype?: "asset"}>;
   logo_small?: AssetStoryblok;
+  homepage_link?: Exclude<MultilinkStoryblok, {linktype?: "email"} | {linktype?: "asset"}>;
   menu_items?: HeaderMenuItemStoryblok[];
   _uid: string;
   component: "Header";
@@ -137,6 +144,14 @@ export interface HeroStoryblok {
   content: string;
   _uid: string;
   component: "hero";
+  [k: string]: any;
+}
+
+export interface LegalLinkStoryblok {
+  link?: Exclude<MultilinkStoryblok, {linktype?: "email"} | {linktype?: "asset"}>;
+  title?: string;
+  _uid: string;
+  component: "legal_link";
   [k: string]: any;
 }
 
@@ -189,6 +204,15 @@ export interface ServicesStoryblok {
   body: RichtextStoryblok;
   _uid: string;
   component: "services";
+  [k: string]: any;
+}
+
+export interface SocialLinkStoryblok {
+  link?: Exclude<MultilinkStoryblok, {linktype?: "email"} | {linktype?: "asset"}>;
+  title?: string;
+  icon?: AssetStoryblok;
+  _uid: string;
+  component: "social_link";
   [k: string]: any;
 }
 
