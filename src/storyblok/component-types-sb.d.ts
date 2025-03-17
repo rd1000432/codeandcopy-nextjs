@@ -139,9 +139,23 @@ export interface HeaderMenuItemStoryblok {
   [k: string]: any;
 }
 
+export interface RichtextStoryblok {
+  type: string;
+  content?: RichtextStoryblok[];
+  marks?: RichtextStoryblok[];
+  attrs?: any;
+  text?: string;
+  [k: string]: any;
+}
+
 export interface HeroStoryblok {
-  headline: string;
-  content: string;
+  background_option: "" | "image" | "video";
+  background_image?: AssetStoryblok;
+  background_webm?: AssetStoryblok;
+  background_mp4?: AssetStoryblok;
+  fallback_image?: AssetStoryblok;
+  headline?: RichtextStoryblok;
+  call_to_action?: ButtonLinkStoryblok[];
   _uid: string;
   component: "hero";
   [k: string]: any;
@@ -185,15 +199,6 @@ export interface RichtextSectionStoryblok {
   text?: string;
   _uid: string;
   component: "richtext_section";
-  [k: string]: any;
-}
-
-export interface RichtextStoryblok {
-  type: string;
-  content?: RichtextStoryblok[];
-  marks?: RichtextStoryblok[];
-  attrs?: any;
-  text?: string;
   [k: string]: any;
 }
 

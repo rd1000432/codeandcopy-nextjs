@@ -82,7 +82,7 @@
       "display_name": null,
       "description": "",
       "created_at": "2025-03-11T16:23:28.342Z",
-      "updated_at": "2025-03-17T12:35:25.502Z",
+      "updated_at": "2025-03-17T12:50:55.010Z",
       "id": 7069971,
       "schema": {
         "footer_logo": {
@@ -136,7 +136,7 @@
       "preset_id": null,
       "real_name": "footer",
       "component_group_uuid": null,
-      "color": null,
+      "color": "#2db47d",
       "icon": null,
       "internal_tags_list": [],
       "internal_tag_ids": [],
@@ -147,7 +147,7 @@
       "display_name": null,
       "description": "",
       "created_at": "2025-03-11T16:31:30.189Z",
-      "updated_at": "2025-03-17T12:35:09.699Z",
+      "updated_at": "2025-03-17T12:51:29.158Z",
       "id": 7069973,
       "schema": {
         "headline_line_one": {
@@ -181,7 +181,7 @@
       "preset_id": null,
       "real_name": "footer_item",
       "component_group_uuid": "all",
-      "color": "#3ea6a6",
+      "color": "#2db47d",
       "icon": null,
       "internal_tags_list": [],
       "internal_tag_ids": [],
@@ -301,7 +301,7 @@
       "display_name": null,
       "description": "",
       "created_at": "2025-03-11T13:04:13.856Z",
-      "updated_at": "2025-03-17T11:27:21.132Z",
+      "updated_at": "2025-03-17T12:51:04.951Z",
       "id": 7069053,
       "schema": {
         "logo": {
@@ -343,7 +343,7 @@
       "preset_id": null,
       "real_name": "Header",
       "component_group_uuid": "all",
-      "color": null,
+      "color": "#2db47d",
       "icon": null,
       "internal_tags_list": [],
       "internal_tag_ids": [],
@@ -390,20 +390,74 @@
       "display_name": null,
       "description": null,
       "created_at": "2025-02-21T09:40:01.838Z",
-      "updated_at": "2025-02-21T09:40:34.603Z",
+      "updated_at": "2025-03-17T13:16:24.083Z",
       "id": 6990886,
       "schema": {
-        "headline": {
-          "type": "text",
+        "background_option": {
+          "type": "option",
           "pos": 0,
+          "use_uuid": true,
           "required": true,
-          "id": "CUW9PQlTSyGvKmMvo9h3zA"
+          "options": [
+            {
+              "_uid": "ac2b33a4-76b4-4d1d-bdac-4ab8c00a9b73",
+              "name": "image",
+              "value": "image"
+            },
+            {
+              "_uid": "c780603a-b482-40a3-85e9-cac1e30dfe40",
+              "value": "video",
+              "name": "video"
+            }
+          ],
+          "id": "H--IAghxSGOGGMX7078gPA"
         },
-        "content": {
-          "type": "text",
+        "background_image": {
+          "type": "asset",
           "pos": 1,
-          "id": "7_26ydjjRkePv21adjJ3DA",
-          "required": true
+          "id": "LLJ2AP3zSe6Kw_DSCRQDuw",
+          "filetypes": [
+            "images"
+          ]
+        },
+        "background_webm": {
+          "type": "asset",
+          "pos": 2,
+          "filetypes": [
+            "videos"
+          ],
+          "id": "6Rl5oaEiS4iRNgI0Hvnlog"
+        },
+        "background_mp4": {
+          "type": "asset",
+          "pos": 3,
+          "id": "HmFIi_w6QnmfftbdX0-cJA",
+          "filetypes": [
+            "videos"
+          ]
+        },
+        "fallback_image": {
+          "type": "asset",
+          "pos": 4,
+          "id": "mte6dzOBSjqIWVJW4DXbRQ",
+          "filetypes": [
+            "images"
+          ]
+        },
+        "headline": {
+          "type": "richtext",
+          "pos": 5,
+          "id": "0amJvkyhROKiv4E1KEVxxA"
+        },
+        "call_to_action": {
+          "type": "bloks",
+          "pos": 6,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "button_link"
+          ],
+          "id": "k3BVeNntSPOuJ39ypEwzGg"
         }
       },
       "image": null,
@@ -427,7 +481,7 @@
       "display_name": null,
       "description": "",
       "created_at": "2025-03-17T12:09:41.758Z",
-      "updated_at": "2025-03-17T12:09:52.681Z",
+      "updated_at": "2025-03-17T12:51:12.743Z",
       "id": 7094557,
       "schema": {
         "link": {
@@ -450,7 +504,7 @@
       "preset_id": null,
       "real_name": "legal_link",
       "component_group_uuid": "all",
-      "color": null,
+      "color": "#2db47d",
       "icon": null,
       "internal_tags_list": [],
       "internal_tag_ids": [],
