@@ -14,7 +14,7 @@ interface FooterItemProps {
 
 const FooterItem: FC<FooterItemProps> = props => {
   const { blok, className = null } = props;
-  const { headline_line_one, headline_line_two, call_to_action } = blok;
+  const { headline_line_one, headline_line_two, call_to_action } = blok as { headline_line_one?: string; headline_line_two?: string; call_to_action?: { link: string; title: string }[] };
 
   return (
     <section className={styles.wrapper}>
@@ -28,7 +28,7 @@ const FooterItem: FC<FooterItemProps> = props => {
           </h3>
         )}
 
-        {call_to_action?.map((action: { link: string; title: string }, index: number) => (
+        {call_to_action?.map((action, index) => (
           <Button
             key={index}
             link={{ cached_url: action.link } as MultilinkStoryblok}
