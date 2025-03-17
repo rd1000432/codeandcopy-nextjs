@@ -1,5 +1,4 @@
 "use client";
-
 import { storyblokEditable } from "@storyblok/react";
 import { type FC, useState } from "react";
 
@@ -12,7 +11,7 @@ import { Button } from "@/components/common";
 
 import Richtext from "../RichtextSection/components/Richtext";
 
-const HeroSection: FC<Props> = blok => {
+const Hero: FC<Props> = ({blok}) => {  
   const {
     background_option,
     background_webm,
@@ -22,6 +21,8 @@ const HeroSection: FC<Props> = blok => {
     headline,
     call_to_action,
   } = blok;
+
+  console.log(blok);
 
   const [isVideoError, setIsVideoError] = useState(false);
 
@@ -67,9 +68,9 @@ const HeroSection: FC<Props> = blok => {
             src={background_image?.filename}
             alt={background_image?.alt || "Background image"}
             objectFit="cover"
-            fill
             role="presentation"
             width={1920}
+            height={1080}
             sizes="100vw"
           />
         ) : fallback_image?.filename ? (
@@ -104,4 +105,4 @@ const HeroSection: FC<Props> = blok => {
   );
 };
 
-export default HeroSection;
+export default Hero;
