@@ -11,7 +11,7 @@ import Image from "next/image";
 import type { FooterStoryblok } from "@/storyblok/component-types-sb";
 
 import FooterItem from "./components/FooterItem";
-import styles from "./Footer.module.scss";
+import styles from "./footer.module.scss";
 import { stripHome } from "@/helpers/stripHome";
 
 
