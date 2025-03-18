@@ -21,9 +21,7 @@ const Hero: FC<Props> = ({blok}) => {
     headline,
     call_to_action,
   } = blok;
-
-  console.log(blok);
-
+  
   const [isVideoError, setIsVideoError] = useState(false);
 
   const isVideo = background_option === "video" && !isVideoError;
