@@ -2,8 +2,8 @@
 import cn from "classnames";
 import type { FC } from "react";
 
-import { Button } from "@/components/common";
-import type { FooterItemStoryblok, MultilinkStoryblok } from "@/storyblok/component-types-sb";
+import { ButtonLink } from "@/components/common";
+import type { FooterItemStoryblok, ButtonLinkStoryblok } from "@/storyblok/component-types-sb";
 
 import styles from "./footer-item.module.scss";
 
@@ -29,12 +29,10 @@ const FooterItem: FC<FooterItemProps> = props => {
         )}
 
         {call_to_action?.map((action, index) => (
-          <Button
+          <ButtonLink
             key={index}
-            link={{ cached_url: action.link } as MultilinkStoryblok}
-            title={action.title}
+            link={{ cached_url: action.link, title: action.title, _uid: '', component: 'button_link' } as ButtonLinkStoryblok}
             className={styles.footerButton}
-            type={"icon"}
           />
         ))}
       </div>

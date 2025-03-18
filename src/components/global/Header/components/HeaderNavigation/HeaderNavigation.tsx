@@ -17,7 +17,8 @@ const HeaderNavigation: FC<{
   blok: HeaderStoryblok;
   isMobileMenuOpen?: boolean;
   isDraftMode?: boolean;
-}> = ({ blok, isMobileMenuOpen }) => {
+  closeMenu?: () => void; 
+}> = ({ blok, isMobileMenuOpen, closeMenu }) => {
   const pathName = usePathname();
 
   const normalizeUrl = (url: string) => {
@@ -44,7 +45,10 @@ const HeaderNavigation: FC<{
               [styles.active]: getIsActive(pathName, normalizeUrl(item.link?.cached_url || ""), item)
                             })}
             >
-              <Link href={normalizeUrl(item.link?.cached_url || "")}>
+              <Link 
+                href={normalizeUrl(item.link?.cached_url || "")}
+                onClick={closeMenu}
+              >
                 {item.title}
               </Link>
             </li>

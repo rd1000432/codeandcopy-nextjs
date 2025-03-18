@@ -5,12 +5,11 @@ import { render } from "storyblok-rich-text-react-renderer";
 import { LinkWrapper } from "@/components/common";
 import { isRichtextEmpty } from "@/helpers/isRichtextEmpty";
 import type {
-  ButtonLinkStoryblok,
   RichtextSectionStoryblok,
   RichtextStoryblok,
 } from "@/storyblok/component-types-sb";
 
-import { ButtonLink } from "../ButtonLink/ButtonLink";
+// import { ButtonLink } from "@/components/common";
 import styles from "./richtext.module.scss";
 
 export type Props = {
@@ -69,9 +68,9 @@ const Richtext: FC<Props> = blok => {
               underline: children => <u className={styles.underline}>{children}</u>,
               italic: children => <i className={styles.italic}>{children}</i>,
             },
-            blokResolvers: {
-              ["button_link"]: props => <ButtonLink {...(props as ButtonLinkStoryblok)} />,
-            },
+            // blokResolvers: {
+            //   ["button_link"]: props => <ButtonLink {...(props as ButtonLinkStoryblok)} />,
+            // },
           })}
         </div>
       )}

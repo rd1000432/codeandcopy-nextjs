@@ -1,2 +1,2 @@
 export { default as LinkWrapper } from "./LinkWrapper/LinkWrapper";
-export { Button } from "@/components/common/Button";
+export { default as ButtonLink } from "./ButtonLink/ButtonLink";

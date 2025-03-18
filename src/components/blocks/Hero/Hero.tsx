@@ -2,12 +2,12 @@
 import { storyblokEditable } from "@storyblok/react";
 import { type FC, useState } from "react";
 
-import type { HeroStoryblok, MultilinkStoryblok, ButtonLinkStoryblok } from "@/storyblok/component-types-sb";
+import type { HeroStoryblok, ButtonLinkStoryblok } from "@/storyblok/component-types-sb";
 import styles from "./hero.module.scss";
 export type Props = HeroStoryblok;
 import Image from "next/image";
 
-import { Button } from "@/components/common";
+import { ButtonLink } from "@/components/common";
 
 import Richtext from "../RichtextSection/components/Richtext";
 
@@ -90,13 +90,13 @@ const Hero: FC<Props> = ({blok}) => {
         {headline && <Richtext className={styles.headline} text={headline} />}
 
         {call_to_action?.map((action: ButtonLinkStoryblok, index: number) => (
-          <Button
+          action.link && (
+            <ButtonLink
             key={index}
-            link={action.link as MultilinkStoryblok}
-            title={action.title}
+            link={{ cached_url: action.link, title: action.title, _uid: '', component: 'button_link' } as ButtonLinkStoryblok}
             className={styles.button}
-            type={"icon"}
           />
+          )
         ))}
       </section>
     </section>

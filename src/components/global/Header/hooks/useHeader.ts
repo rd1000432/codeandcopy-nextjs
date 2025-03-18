@@ -26,5 +26,5 @@ export const useHeader = () => {
     }
   }, [isPending]);
 
-  return { isMobileMenuOpen, toggleMenu };
+  return { isMobileMenuOpen, toggleMenu, closeMenu };
 };

@@ -48,7 +48,7 @@
     &.open {
       visibility: visible;
       transform: translateX(0);
-      background-color: blue; //var(--bg-color)
+      background-color: $dark; //var(--bg-color)
     }
   }
 
@@ -94,7 +94,7 @@
 
   position: relative;
   width: fit-content;
-  color: var(--main-color);
+  color: white;
 
   &:hover {
     .sub-menu {

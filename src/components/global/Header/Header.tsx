@@ -21,7 +21,7 @@ type HeaderProps = {
 
 const Header: FC<HeaderProps> = props => {
   const { blok, isDraftMode, logo_small} = props;
-  const { isMobileMenuOpen, toggleMenu } = useHeader();
+  const { isMobileMenuOpen, toggleMenu, closeMenu } = useHeader();
   const normalizeUrl = (url: string) => {
     if (!url) return "/";
     const strippedUrl = stripHome(url);
@@ -63,6 +63,7 @@ const Header: FC<HeaderProps> = props => {
           blok={blok}
           isMobileMenuOpen={isMobileMenuOpen}
           isDraftMode={isDraftMode}
+          closeMenu={closeMenu}
         />
     </header>
   );
