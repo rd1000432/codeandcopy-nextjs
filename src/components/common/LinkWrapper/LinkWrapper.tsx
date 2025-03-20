@@ -3,8 +3,8 @@ import Link from "next/link";
 import type { ForwardedRef, ReactNode } from "react";
 import type { FC } from "react";
 
-import { stripHome } from "../../../helpers/stripHome";
-import { useLink } from "../../hooks/useLink";
+import { stripHome } from "@/helpers/stripHome";
+import { useLink } from "@/components/hooks/useLink";
 import type { MultilinkStoryblok } from "@/storyblok/component-types-sb";
 
 type LinkWrapperProps = {

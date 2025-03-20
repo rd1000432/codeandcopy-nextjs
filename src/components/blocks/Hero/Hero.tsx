@@ -7,7 +7,7 @@ import styles from "./hero.module.scss";
 export type Props = HeroStoryblok;
 import Image from "next/image";
 
-import { ButtonLink } from "@/components/common";
+import { Button } from "../Button/Button";
 
 import Richtext from "../RichtextSection/components/Richtext";
 
@@ -19,7 +19,7 @@ const Hero: FC<Props> = ({blok}) => {
     background_image,
     fallback_image,
     headline,
-    call_to_action,
+    call_to_action
   } = blok;
   
   const [isVideoError, setIsVideoError] = useState(false);
@@ -65,7 +65,6 @@ const Hero: FC<Props> = ({blok}) => {
             className={styles.backgroundImage}
             src={background_image?.filename}
             alt={background_image?.alt || "Background image"}
-            objectFit="cover"
             role="presentation"
             width={1920}
             height={1080}
@@ -77,7 +76,6 @@ const Hero: FC<Props> = ({blok}) => {
             className={styles.onErrorBackgroundImage}
             src={fallback_image?.filename}
             alt={fallback_image?.alt || "Fallback image"}
-            objectFit="cover"
             fill
             width={1920}
             sizes="100vw"
@@ -89,14 +87,13 @@ const Hero: FC<Props> = ({blok}) => {
 
         {headline && <Richtext className={styles.headline} text={headline} />}
 
+
         {call_to_action?.map((action: ButtonLinkStoryblok, index: number) => (
-          action.link && (
-            <ButtonLink
+          <Button
             key={index}
             link={{ cached_url: action.link, title: action.title, _uid: '', component: 'button_link' } as ButtonLinkStoryblok}
             className={styles.button}
           />
-          )
         ))}
       </section>
     </section>

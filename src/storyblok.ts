@@ -8,6 +8,7 @@ import { Testimonial } from "./components/blocks/Testimonial";
 import { RecommendedServices } from "./components/blocks/RecommendedServices";
 import TextIcon from "./components/blocks/TextIcon";
 import Header  from "./components/global/Header";
+import { Button } from "./components/blocks/Button";
 
 const cachedFetch = (input: any, init?: any): Promise<Response> => {
   return fetch(input, {
@@ -33,6 +34,7 @@ export const getStoryblokApi = storyblokInit({
     recommended_services: RecommendedServices,
     text_icon: TextIcon,
     header: Header,
+    button_link: Button,
   },
   enableFallbackComponent: true,
 });

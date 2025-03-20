@@ -11,7 +11,7 @@
 
   transition: all 0.2s linear;
 
-  color: var(--highlight-color);
+  color: $light; // var(--highlight-color)
 }
 
 .button {
@@ -25,7 +25,7 @@
   padding-top: rem(12);
   padding-bottom: rem(12);
 
-  color: $dark;
+  color: $light;
 
   gap: rem(20);
 
@@ -44,7 +44,7 @@
     width: 100%;
   }
 
-  border: 2px solid var(--highlight-color-transparent-light);
+  border: 2px solid $light; //var(--highlight-color-transparent-light)
   padding-right: $padding-lg;
   padding-left: $padding-lg;
 }
@@ -56,5 +56,5 @@
 
 .highlight {
   border-width: 1px;
-  border-color: var(--highlight-color);
+  border-color: $dark; //var(--highlight-color)
 }

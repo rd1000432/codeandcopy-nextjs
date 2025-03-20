@@ -40,12 +40,13 @@ export const useLink = (
     }
 
     if (linktype === "story") {
-      if (!story) {
+      const fullSlug = story?.full_slug || cached_url;
+
+      if (!fullSlug) {
         return null;
       }
 
-      const { full_slug = "" } = story;
-      const fullSlugWithLanguage = getSlugWithoutAppName(getSlugWithLanguage(full_slug, locale));
+      const fullSlugWithLanguage = getSlugWithoutAppName(getSlugWithLanguage(fullSlug, locale));
 
       if (anchor) {
         if (pathName === fullSlugWithLanguage) {
@@ -64,7 +65,7 @@ export const useLink = (
       }
 
       return {
-        href: `/${fullSlugWithLanguage}`,
+        href: `/${fullSlugWithLanguage.replace(/^\/+/, "")}`, // ✅ Removes extra `/`
         type: "internal",
         isNewTab,
       };

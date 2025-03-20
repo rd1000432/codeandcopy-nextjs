@@ -84,7 +84,6 @@ const Footer: FC<{ blok: FooterStoryblok }> = ({ blok }) => {
                    alt={link.icon.alt || `Link to ${link.title || "social media"}`}
                    width={24}
                    height={24}
-                   objectFit="cover"
                     />
               </Link>
             ) : null
