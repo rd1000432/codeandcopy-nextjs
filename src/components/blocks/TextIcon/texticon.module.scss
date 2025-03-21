@@ -2,8 +2,8 @@
 
 .wrapper {
   @include mobile {
-    padding-top: 0;
-    padding-bottom: $padding-xlg;
+    padding-top: $padding-sm;
+    padding-bottom: $padding-sm;
   }
 
   flex-direction: column;
@@ -31,7 +31,6 @@
   .flexCol {
     flex: 1 1 66.6666%;
     display: flex;
-    border: 1px solid green;
 
     &:nth-child(2) {
       @include mobile {
@@ -56,7 +55,6 @@
   @include mobile {
     width: rem(80);
     height: rem(80);
-    border: 3px solid purple;
   }
 
   width: rem(112);

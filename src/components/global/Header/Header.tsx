@@ -1,4 +1,5 @@
 'use client'
+import { useState, useEffect } from "react";
 import { storyblokEditable } from "@storyblok/react/rsc";
 import type { FC } from "react";
 import type { HeaderStoryblok } from "@/storyblok/component-types-sb";
@@ -9,6 +10,7 @@ import { useHeader } from "./hooks/useHeader";
 import HeaderNavigation from "./components/HeaderNavigation";
 import BurgerButton from "./components/BurgerButton";
 import { stripHome } from "@/helpers/stripHome";
+import cn from "classnames";
 
 
 type HeaderProps = {
@@ -22,6 +24,9 @@ type HeaderProps = {
 const Header: FC<HeaderProps> = props => {
   const { blok, isDraftMode, logo_small} = props;
   const { isMobileMenuOpen, toggleMenu, closeMenu } = useHeader();
+  const [scrolledPastHero, setScrolledPastHero] = useState(false);
+
+
   const normalizeUrl = (url: string) => {
     if (!url) return "/";
     const strippedUrl = stripHome(url);
@@ -32,9 +37,24 @@ const Header: FC<HeaderProps> = props => {
     return absoluteUrl === "" ? "/" : absoluteUrl; // Ensures "/" remains if `/home` was the only thing in the URL
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const heroHeight = Math.min(500, window.innerHeight); // Match min-height: min(rem(500), 100vh);
+      setScrolledPastHero(window.scrollY > heroHeight);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
 
   return (
-    <header {...storyblokEditable(blok)} className={styles.header}>
+    <header {...storyblokEditable(blok)} 
+    className={cn(styles.header, {
+      [styles.mobileMenuOpen]: isMobileMenuOpen,
+      [styles.scrolledPastHero]: scrolledPastHero
+    })}
+    >
       {/* Logo */}
       <div className={styles.logo}>
       <Link className={styles.logoLink} href={normalizeUrl(blok.homepage_link?.cached_url || "/")}>

@@ -19,6 +19,8 @@
 
   background: none;
   cursor: pointer;
+
+  
 }
 
 .line {
@@ -48,6 +50,12 @@
     bottom: 0;
     left: 0;
     width: 66%;
+  }
+}
+
+.scrolledPastHero {
+  .line {
+    background-color: black!important; // Make sure the color is applied
   }
 }
 

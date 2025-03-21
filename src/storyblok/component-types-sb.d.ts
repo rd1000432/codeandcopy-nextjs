@@ -27,8 +27,8 @@ export type MultilinkStoryblok =
 export interface ButtonLinkStoryblok {
   title: string;
   link?: Exclude<MultilinkStoryblok, {linktype?: "email"} | {linktype?: "asset"}>;
-  style?: "" | "default" | "light" | "highlight";
-  color?: "" | "default" | "light" | "highlight";
+  style?: "" | "default" | "borderless";
+  color?: "" | "default" | "highlight" | "light";
   _uid: string;
   component: "button_link";
   [k: string]: any;

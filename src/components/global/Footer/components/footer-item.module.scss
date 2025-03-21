@@ -15,5 +15,8 @@
 }
 
 .footerButton {
+  @include mobile {
+    max-width: 70%;
+  }
   @extend %button-label;
 }

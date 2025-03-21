@@ -97,7 +97,7 @@ const Hero: FC<Props> = ({blok}) => {
         ))}
       </section>
     </section>
-  );
+  ); 
 };
 
 export default Hero;
