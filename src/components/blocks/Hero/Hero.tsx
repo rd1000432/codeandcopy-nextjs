@@ -22,6 +22,7 @@ const Hero: FC<Props> = ({blok}) => {
     headline,
     call_to_action
   } = blok;
+
   
   const [isVideoError, setIsVideoError] = useState(false);
 
@@ -51,7 +52,6 @@ const Hero: FC<Props> = ({blok}) => {
     });
 
   return (
-    <section className={styles.wrapper}>
       <section className={heroClass} {...storyblokEditable(blok)}>
         { isVideo ? (
           <video
@@ -102,7 +102,6 @@ const Hero: FC<Props> = ({blok}) => {
           />
         ))}
       </section>
-    </section>
   ); 
 };
 

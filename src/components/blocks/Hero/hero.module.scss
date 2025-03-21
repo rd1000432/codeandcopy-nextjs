@@ -1,6 +1,6 @@
 @use "@/styles/helpers" as *;
 
-.hero, .hero-no-video {
+.hero {
   @include desktop {
     min-height: rem(700);
   }
@@ -73,13 +73,14 @@
   color: $white-100;
 }
 
-.hero-no-video {
-  height: auto;
+.heroNoVideo {
+  min-height: rem(200);
+  background-color: $gray-100;
 
-  .headline {
+  .headline h2 {
     border-bottom: rem(4) solid black;
-    background-color: $light;
     color: $dark;
+    font-weight: $bold-font-weight;
   }
 
   .button {

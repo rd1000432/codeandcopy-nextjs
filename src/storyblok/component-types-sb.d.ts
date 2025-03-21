@@ -153,7 +153,7 @@ export interface RichtextStoryblok {
 }
 
 export interface HeroStoryblok {
-  background_option: "" | "image" | "video";
+  background_option: "" | "image" | "video" | "none";
   background_image?: AssetStoryblok;
   background_webm?: AssetStoryblok;
   background_mp4?: AssetStoryblok;

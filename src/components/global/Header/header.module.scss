@@ -34,11 +34,6 @@
 .scrolledPastHero {
   z-index: $header-nav-z-index;
   background-color: $black-100; 
-  @include desktop {
-    a {
-      color: black;
-    }
-  }  
   @include tablet {
     a {
       color: white;

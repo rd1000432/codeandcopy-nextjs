@@ -22,8 +22,6 @@ export const Button: FC<Props> = props => {
   const { title, link, style = "default", color = "default", className, onClick, ...rest } = props;
   const ref = useRef<HTMLButtonElement>(null);
 
-  console.log("Button props:", props);
-
   const linkClassname = cn(
     styles.button,
     {
