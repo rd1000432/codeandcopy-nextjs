@@ -39,7 +39,7 @@ const Header: FC<HeaderProps> = props => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const heroHeight = Math.min(500, window.innerHeight); // Match min-height: min(rem(500), 100vh);
+      const heroHeight = Math.min(500, window.innerHeight);
       setScrolledPastHero(window.scrollY > heroHeight);
     };
 

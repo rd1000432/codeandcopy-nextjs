@@ -19,8 +19,6 @@
 
   background: none;
   cursor: pointer;
-
-  
 }
 
 .line {
@@ -53,11 +51,6 @@
   }
 }
 
-.scrolledPastHero {
-  .line {
-    background-color: black!important; // Make sure the color is applied
-  }
-}
 
 .open {
   .line {
@@ -76,3 +69,5 @@
     }
   }
 }
+
+
