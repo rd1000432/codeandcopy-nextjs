@@ -75,11 +75,10 @@
 
 .heroNoVideo {
   min-height: rem(200);
-  background-color: $gray-100;
+  background-color: $black-100;
 
   .headline h2 {
-    border-bottom: rem(4) solid black;
-    color: $dark;
+    color: $light;
     font-weight: $bold-font-weight;
   }
 
