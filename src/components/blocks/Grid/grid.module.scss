@@ -25,10 +25,13 @@
   }
   
   .gridContainer {
-    margin-top: 3rem; // Equivalent to 'mt-12'
+    @include mobile {
+      grid-template-columns: 1fr;
+    }
+    margin-top: 3rem;
     display: grid;
     grid-template-columns: repeat(3, 1fr); 
-    gap: 2rem; // Equivalent to 'gap-8'
+    gap: 2rem;
   }
 
   .buttonGrid {
