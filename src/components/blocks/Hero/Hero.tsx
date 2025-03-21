@@ -45,11 +45,10 @@ const Hero: FC<Props> = ({blok}) => {
     </>
   );
 
-  const noBackground = !isVideo && !isImage;
-
-  const heroClass = cn(styles.hero, {
-    [styles.heroNoVideo]: noBackground
-  });
+    // Apply heroNoVideo class if background_option is explicitly set to "none"
+    const heroClass = cn(styles.hero, {
+      [styles.heroNoVideo]: background_option === "none",
+    });
 
   return (
     <section className={styles.wrapper}>
