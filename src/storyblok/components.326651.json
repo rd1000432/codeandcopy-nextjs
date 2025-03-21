@@ -693,24 +693,35 @@
       "display_name": null,
       "description": null,
       "created_at": "2025-02-19T10:54:28.495Z",
-      "updated_at": "2025-02-19T11:02:26.196Z",
+      "updated_at": "2025-03-21T13:51:32.131Z",
       "id": 6977779,
       "schema": {
+        "hero": {
+          "type": "bloks",
+          "pos": 0,
+          "maximum": 1,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "hero"
+          ],
+          "id": "B0imnOhtRjSBUQGiZYNCgQ"
+        },
         "lead_text": {
           "type": "text",
-          "pos": 0,
+          "pos": 1,
           "translatable": true,
           "id": "DK9wL5LLTWGRUoJOnfJK6A",
           "required": true
         },
         "main_image": {
           "type": "asset",
-          "pos": 1,
+          "pos": 2,
           "id": "fp9D4Yy1S7-peF43A5BA4Q"
         },
         "field": {
           "type": "option",
-          "pos": 2,
+          "pos": 3,
           "use_uuid": true,
           "id": "yhn3rEnHSFKb5IBUgdaLig",
           "options": [
@@ -733,7 +744,7 @@
         },
         "body": {
           "type": "richtext",
-          "pos": 3,
+          "pos": 4,
           "id": "SDt0DIzDSYW0KYDYkRpEvQ",
           "required": true,
           "customize_toolbar": true,
@@ -836,6 +847,36 @@
       "all_presets": [],
       "preset_id": null,
       "real_name": "testimonial",
+      "component_group_uuid": "46060bef-a421-41d9-9c44-567227184725",
+      "color": "#2db47d",
+      "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "component_group_name": "Nestable blocks"
+    },
+    {
+      "name": "text_banner",
+      "display_name": null,
+      "description": "",
+      "created_at": "2025-03-21T17:10:05.749Z",
+      "updated_at": "2025-03-21T17:22:43.313Z",
+      "id": 7116903,
+      "schema": {
+        "banner_text": {
+          "type": "text",
+          "pos": 0,
+          "id": "Fogg6eFvQuCYioZ7jc8f6A"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "text_banner",
       "component_group_uuid": "46060bef-a421-41d9-9c44-567227184725",
       "color": "#2db47d",
       "icon": null,

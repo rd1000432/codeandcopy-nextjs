@@ -1,0 +1,19 @@
+@use "@/styles/helpers" as *;
+
+.wrapper {
+  padding: $padding-xsm 0;
+  background-color: $turquoise-100;
+}
+
+.starIcon {
+  margin: 0 $spacing-sm;
+}
+
+.marqueeItem {
+  @extend %h3;
+
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  color: $black-100;
+}

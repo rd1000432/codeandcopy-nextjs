@@ -109,6 +109,7 @@ export interface GlobalStoryblok {
     | ServicesStoryblok
     | SocialLinkStoryblok
     | TestimonialStoryblok
+    | TextBannerStoryblok
     | TextIconStoryblok
   )[];
   _uid: string;
@@ -182,6 +183,7 @@ export interface PageStoryblok {
     | RecommendedServicesStoryblok
     | RichtextSectionStoryblok
     | TestimonialStoryblok
+    | TextBannerStoryblok
     | TextIconStoryblok
   )[];
   _uid: string;
@@ -207,6 +209,7 @@ export interface RichtextSectionStoryblok {
 }
 
 export interface ServicesStoryblok {
+  hero?: HeroStoryblok[];
   lead_text: string;
   main_image?: AssetStoryblok;
   field?: "" | "Web Development" | "Digital Marketing" | "Content Creation";
@@ -230,6 +233,13 @@ export interface TestimonialStoryblok {
   comment: string;
   _uid: string;
   component: "testimonial";
+  [k: string]: any;
+}
+
+export interface TextBannerStoryblok {
+  banner_text?: string;
+  _uid: string;
+  component: "text_banner";
   [k: string]: any;
 }
 
