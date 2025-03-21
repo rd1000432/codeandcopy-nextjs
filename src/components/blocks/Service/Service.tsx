@@ -2,20 +2,14 @@ import Richtext from "../RichtextSection/components/Richtext/Richtext";
 import styles from "./service.module.scss";
 
 export const Service = (props: any) => {
+    const { lead_text, main_image, field, body } = props.blok;
+    
     return (
-        <main className="container mx-auto px-4 w-full py-16">
-        <h1 className={styles.test}>{props.blok.lead_text}</h1>
-        <img className="mt-12" src={props.blok.main_image.filename}/>
-        <p className="mt-12 text-lg md:text-2xl md:leading-relaxed">{props.blok.field}</p>
-        {/* <div
-            className="prose mt-12 md:prose-lg max-w-none"
-            dangerouslySetInnerHTML={{
-                __html: renderRichText(props.blok.body ?? ""),
-            }}
-        ></div> */}
-        <Richtext className={styles.description} text={props.blok.body} />
-
-        {/* <pre>{JSON.stringify(props, null, 2)}</pre> */}
+        <main className={styles.serviceContainer}>
+            {lead_text && <h1 className={styles.test}>{lead_text}</h1>}
+            {main_image && <img className={styles.mainImage} src={main_image.filename} alt="Main Image" />}
+            {field && <p className={styles.fieldText}>{field}</p>}
+            {body && <Richtext className={styles.description} text={body} />}
         </main>
     );
-} 
+};

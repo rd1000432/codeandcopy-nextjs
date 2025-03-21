@@ -14,6 +14,7 @@
 .texticonWrapper {
   @include mobile {
     flex-direction: column;
+    padding: $padding-sm $margin-contained $padding-md;
   }
 
   border: 2px solid $body-font-color;

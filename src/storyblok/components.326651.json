@@ -92,7 +92,7 @@
       "display_name": null,
       "description": null,
       "created_at": "2025-02-21T09:41:39.424Z",
-      "updated_at": "2025-02-21T09:42:02.581Z",
+      "updated_at": "2025-03-21T12:43:19.251Z",
       "id": 6990892,
       "schema": {
         "headline": {
@@ -106,6 +106,16 @@
           "pos": 1,
           "id": "hwKGxN_ARLSbwxNKddCiJQ",
           "required": true
+        },
+        "button": {
+          "type": "multilink",
+          "pos": 2,
+          "id": "A3piK1PvQLSWA-WD7bYOtA"
+        },
+        "link_title": {
+          "type": "text",
+          "pos": 3,
+          "id": "9FLWk2lxQku9iqdX_L6QpQ"
         }
       },
       "image": null,
@@ -304,7 +314,7 @@
       "display_name": null,
       "description": null,
       "created_at": "2025-02-21T09:40:53.389Z",
-      "updated_at": "2025-02-21T09:44:03.993Z",
+      "updated_at": "2025-03-21T12:42:04.983Z",
       "id": 6990890,
       "schema": {
         "headline": {

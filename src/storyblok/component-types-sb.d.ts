@@ -37,6 +37,8 @@ export interface ButtonLinkStoryblok {
 export interface FeatureStoryblok {
   headline: string;
   content: string;
+  button?: Exclude<MultilinkStoryblok, {linktype?: "email"} | {linktype?: "asset"}>;
+  link_title?: string;
   _uid: string;
   component: "feature";
   [k: string]: any;

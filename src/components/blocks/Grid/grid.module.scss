@@ -1,0 +1,41 @@
+@use "@/styles/helpers" as *;
+
+// grid.module.scss
+
+.gridSection {
+    background-color: $gray-100; // Equivalent to 'bg-blue-100'
+    padding-top: 4rem; // Equivalent to 'py-16'
+    padding-bottom: 4rem; // Equivalent to 'py-16'
+  }
+  
+  .container {
+    width: 100%;
+    padding-left: 1rem;  // Equivalent to 'px-4'
+    padding-right: 1rem; // Equivalent to 'px-4'
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .headline {
+    font-size: 1.875rem; // Equivalent to 'text-3xl'
+    font-weight: bold;
+    @media (min-width: 768px) {
+      font-size: 2.25rem; // Equivalent to 'md:text-4xl'
+    }
+  }
+  
+  .gridContainer {
+    margin-top: 3rem; // Equivalent to 'mt-12'
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); // Auto grid columns with a minimum width
+    gap: 2rem; // Equivalent to 'gap-8'
+  }
+
+  .buttonGrid {
+    color: black!important;
+    text-decoration: underline!important;
+    @include mobile {
+      max-width: 70%;
+    }
+  }
+  

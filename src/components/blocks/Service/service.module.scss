@@ -1,10 +1,32 @@
 @use "@/styles/helpers.scss" as *;
 
-.description {
-    font-weight: $bold-font-weight;
-    font-family: $primary-font-family !important;
+// service.module.scss
+
+.serviceContainer {
+    width: 100%;
+    padding: $padding-lg $margin-contained;
+    margin: 0 auto;
 }
 
 .test {
-   font-family: $primary-font-family !important;
+    font-size: rem(2);
+    font-weight: $bold-font-weight;
+}
+
+.mainImage {
+    margin-top: rem(3); // Equivalent to 'mt-12'
+    max-width: 100%;
+    height: auto;
+}
+
+.fieldText {
+    margin-top: rem(3); // Equivalent to 'mt-12'
+    font-size: $bold-font-weight; // Equivalent to 'text-lg'
+    line-height: 1.75rem; // Equivalent to 'md:text-2xl md:leading-relaxed'
+}
+
+.description {
+    margin-top: 3rem; // Similar margin for richtext
+    font-size: 1rem; // Default font size for the description
+    line-height: 1.5rem;
 }

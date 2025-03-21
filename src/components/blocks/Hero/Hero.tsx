@@ -10,6 +10,7 @@ import Image from "next/image";
 import { Button } from "../Button/Button";
 
 import Richtext from "../RichtextSection/components/Richtext";
+import cn from "classnames";
 
 const Hero: FC<Props> = ({blok}) => {  
   const {
@@ -44,9 +45,15 @@ const Hero: FC<Props> = ({blok}) => {
     </>
   );
 
+  const noBackground = !isVideo && !isImage;
+
+  const heroClass = cn(styles.hero, {
+    [styles.heroNoVideo]: noBackground
+  });
+
   return (
     <section className={styles.wrapper}>
-      <section className={styles.hero} {...storyblokEditable(blok)}>
+      <section className={heroClass} {...storyblokEditable(blok)}>
         { isVideo ? (
           <video
             autoPlay
