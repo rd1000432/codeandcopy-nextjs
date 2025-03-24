@@ -3,9 +3,12 @@
 // grid.module.scss
 
 .gridSection {
+  @include mobile {
+    padding-top: $padding-sm;
+    padding-bottom: $padding-sm;
+  }
     background-color: $gray-100; // Equivalent to 'bg-blue-100'
-    padding-top: 4rem; // Equivalent to 'py-16'
-    padding-bottom: 4rem; // Equivalent to 'py-16'
+    padding: var(--padding-xlg) var(--margin-contained) calc(var(--padding-xlg) - var(--padding-sm)) var(--margin-contained);
   }
   
   .container {

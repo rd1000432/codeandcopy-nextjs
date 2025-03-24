@@ -1,0 +1,132 @@
+@use "../mixins/media.scss" as *;
+@use "../utilities/settings.scss" as *;
+@use "../abstract/functions.scss" as *;
+
+.animated-line {
+    &::after {
+      display: block;
+  
+      width: 100%;
+      height: 2px;
+  
+      animation: animated-bg 1.5s linear infinite;
+  
+      background-color: $medium-light;
+      background-size: 200% 100%;
+  
+      content: "";
+    }
+  }
+  
+  .animated-line-parent {
+    &:hover {
+      .animated-line {
+        &::after {
+          background-image: repeating-linear-gradient(
+            to right,
+            $medium-light,
+            $medium-light,
+            $turquoise-100,
+            $medium-light,
+            $medium-light
+          );
+          background-position: 200% 50%;
+        }
+      }
+    }
+  }
+  
+  .animated-line-continuous::after {
+    display: block;
+  
+    width: 100%;
+    height: 2px;
+  
+    animation: animated-bg 1.5s linear infinite;
+  
+    background-color: $medium-light;
+    background-image: repeating-linear-gradient(
+      to right,
+      $medium-light,
+      $medium-light,
+      $turquoise-100,
+      $medium-light,
+      $medium-light
+    );
+    background-position: 200px 50px;
+    background-size: 200% 100%;
+  
+    content: "";
+  }
+  
+  .animated-line-continuous-before::before {
+    display: block;
+  
+    width: 100%;
+    height: 2px;
+  
+    animation: animated-bg 1.5s linear infinite;
+  
+    background-color: $medium-light;
+    background-image: repeating-linear-gradient(
+      to right,
+      $medium-light,
+      $medium-light,
+      $turquoise-100,
+      $medium-light,
+      $medium-light
+    );
+    background-position: 200px 50px;
+    background-size: 200% 100%;
+  
+    content: "";
+  }
+  
+  .animated-line-continuous-vertical::after {
+    animation: animated-bg-vertical 1.5s linear infinite;
+    background-image: repeating-linear-gradient(
+      to bottom,
+      $turquoise-100,
+      $light-light,
+      $light-light,
+      $light-light,
+      $light-light
+    );
+  }
+  
+  @keyframes animated-bg {
+    0% {
+      background-position: 200% 50%;
+    }
+  
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  @keyframes animated-bg-vertical {
+    0% {
+      background-position: 50% 200%;
+    }
+  
+    100% {
+      background-position: 50% 0%;
+    }
+  }
+  
+  .extra-text-padding {
+    @include desktop {
+      padding: 0 $padding-lg;
+    }
+  
+    @include tablet {
+      padding: 0 $padding-lg;
+    }
+  
+    @include mobile {
+      padding: 0;
+    }
+  
+    padding: 0 $padding-xlg;
+  }
+  

@@ -6,7 +6,12 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "next lint && npx stylelint \"**/*.scss\"",
+    "lint:fix": "next lint --fix && npx stylelint \"**/*.scss\" --fix && npm run prettier:format",
+    "lint:package": "npx sort-package-json",
+    "lint:staged": "npx lint-staged",
+    "prettier:check": "npx prettier --config .prettierrc '**/*.{ts,tsx}' --check --ignore-path .eslintignore",
+    "prettier:format": "npx prettier --config .prettierrc '**/*.{ts,tsx}' --write --ignore-path .eslintignore",
     "dotenv-test": " dotenv cross-var \"echo STORYBLOK_SPACE_ID %STORYBLOK_SPACE_ID%\"",
     "generate-sb-types:mac": "cd src/storyblok/ && npx storyblok pull-components --space=326651 && npx storyblok-generate-ts source=components.326651.json target=component-types-sb"
   },
@@ -21,7 +26,6 @@
     "react-dom": "^19.0.0",
     "react-fast-marquee": "^1.6.5",
     "reset-css": "^5.0.2",
-    "sass": "^1.85.0",
     "storyblok-rich-text-react-renderer": "^2.9.2"
   },
   "devDependencies": {
@@ -36,7 +40,17 @@
     "eslint-plugin-sonarjs": "^3.0.2",
     "postcss": "^8",
     "storyblok-generate-ts": "^2.1.0",
+    "sass": "^1.85.0",
     "tailwindcss": "^3.4.1",
-    "typescript": "^5"
+    "typescript": "^5",
+    "prettier": "^3.1.1",
+    "reset-css": "^5.0.2",
+    "stylelint": "^16.3.1",
+    "stylelint-config-css-modules": "^4.4.0",
+    "stylelint-config-standard": "^34.0.0",
+    "stylelint-config-standard-scss": "^13.1.0",
+    "stylelint-order": "^6.0.4",
+    "stylelint-scss": "^5.3.2",
+    "stylelint-selector-bem-pattern": "^3.0.1"
   }
 }

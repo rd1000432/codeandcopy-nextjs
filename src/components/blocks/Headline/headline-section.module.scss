@@ -1,0 +1,36 @@
+@use "@/styles/helpers" as *;
+
+.headline {
+    @include desktop {
+      gap: $padding-xlg;
+    }
+  
+    @include tablet {
+      gap: $padding-lg;
+    }
+  
+    @include mobile {
+      white-space: break-spaces;
+  
+      gap: $padding-sm;
+    }
+  
+    composes: animated-line-continuous;
+  
+    align-items: center;
+  
+    display: flex;
+  
+    white-space: nowrap;
+  
+    gap: rem(80);
+    grid-column: span 4;
+  
+    &::after {
+      width: 100%;
+    }
+  }
+  
+  .extra-padding {
+    composes: extra-text-padding;
+  }

@@ -101,6 +101,7 @@ export interface GlobalStoryblok {
     | GridStoryblok
     | HeaderStoryblok
     | HeaderMenuItemStoryblok
+    | HeadlineStoryblok
     | HeroStoryblok
     | LegalLinkStoryblok
     | PageStoryblok
@@ -141,6 +142,14 @@ export interface HeaderMenuItemStoryblok {
   link?: Exclude<MultilinkStoryblok, {linktype?: "email"} | {linktype?: "asset"}>;
   _uid: string;
   component: "header_menu_item";
+  [k: string]: any;
+}
+
+export interface HeadlineStoryblok {
+  headline?: string;
+  extraPadding: boolean;
+  _uid: string;
+  component: "headline";
   [k: string]: any;
 }
 
