@@ -1,5 +1,4 @@
 import { storyblokEditable } from "@storyblok/react";
-import cn from "classnames";
 import type { FC } from "react";
 
 import type { HeadlineStoryblok } from "@/storyblok/component-types-sb";
