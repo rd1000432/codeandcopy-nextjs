@@ -188,6 +188,7 @@ export interface PageStoryblok {
     | FeatureStoryblok
     | GridStoryblok
     | HeaderMenuItemStoryblok
+    | HeadlineStoryblok
     | HeroStoryblok
     | RecommendedServicesStoryblok
     | RichtextSectionStoryblok

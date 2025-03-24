@@ -28,7 +28,7 @@ const Grid: FC<GridProps> = ({ blok }: GridProps) => {
   return (
     <section {...storyblokEditable(blok)} className={styles.gridSection}>
       <div className={styles.container}>
-        <h2 className={styles.headline}>{blok.headline}</h2>
+        {/* <h2 className={styles.headline}>{blok.headline}</h2> */}
         <div className={styles.gridContainer}>
           {blok.items.map((blokItem) => (
             <div key={blokItem._uid} className={styles.gridItem}>

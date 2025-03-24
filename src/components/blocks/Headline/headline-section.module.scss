@@ -1,5 +1,9 @@
 @use "@/styles/helpers" as *;
 
+.wrapper {
+  padding: var(--padding-sm) var(--margin-contained);
+}
+
 .headline {
     @include desktop {
       gap: $padding-xlg;
@@ -15,7 +19,7 @@
       gap: $padding-sm;
     }
   
-    composes: animated-line-continuous;
+    @extend .animated-line-continuous;
   
     align-items: center;
   
@@ -29,8 +33,4 @@
     &::after {
       width: 100%;
     }
-  }
-  
-  .extra-padding {
-    composes: extra-text-padding;
   }

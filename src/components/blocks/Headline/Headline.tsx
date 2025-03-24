@@ -10,12 +10,10 @@ export type Props = HeadlineStoryblok & {
 };
 
 const Headline: FC<Props> = ({blok})  => {    
-  const { headline, extraPadding } = blok;
+  const { headline } = blok;
   return (
     <section
-      className={cn({
-        [styles.extraPadding]: extraPadding,
-      })}
+    className={styles.wrapper}
       {...storyblokEditable(blok)}
     >
       <h2 className={styles.headline}>{headline}</h2>
