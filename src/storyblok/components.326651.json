@@ -88,6 +88,71 @@
       "component_group_name": ""
     },
     {
+      "name": "call_to_action",
+      "display_name": null,
+      "description": "",
+      "created_at": "2025-03-25T09:32:49.348Z",
+      "updated_at": "2025-03-25T09:41:50.347Z",
+      "id": 7125969,
+      "schema": {
+        "image": {
+          "type": "asset",
+          "pos": 0,
+          "id": "Qht6uQeVRQG53sC-9Q_-IA"
+        },
+        "headline": {
+          "type": "text",
+          "pos": 1,
+          "id": "GuVPFLUmTYuQyBGrMF8oMA"
+        },
+        "button": {
+          "type": "bloks",
+          "pos": 2,
+          "maximum": 1,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "button_link"
+          ],
+          "id": "RdDtkBWRQNqWsraawZhZRg"
+        },
+        "orientation": {
+          "type": "option",
+          "pos": 3,
+          "use_uuid": true,
+          "options": [
+            {
+              "_uid": "ccf0608b-2d68-451b-ac35-859cdb2f9493",
+              "name": "default",
+              "value": "default"
+            },
+            {
+              "_uid": "3f4c8e1d-f674-40c8-b164-29acb06bcf9c",
+              "value": "right",
+              "name": "right"
+            }
+          ],
+          "id": "s9oYYPKCQYatI02KXQ0kXg",
+          "default_value": "default"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "call_to_action",
+      "component_group_uuid": "46060bef-a421-41d9-9c44-567227184725",
+      "color": "#2db47d",
+      "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "component_group_name": "Nestable blocks"
+    },
+    {
       "name": "feature",
       "display_name": null,
       "description": null,

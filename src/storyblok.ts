@@ -11,6 +11,7 @@ import Header  from "./components/global/Header";
 import { Button } from "./components/blocks/Button";
 import  TextBanner from "./components/blocks/TextBanner/TextBanner";
 import Headline from "./components/blocks/Headline/Headline";
+import CallToAction from "./components/blocks/CallToAction";
 
 const cachedFetch = (input: any, init?: any): Promise<Response> => {
   return fetch(input, {
@@ -39,6 +40,7 @@ export const getStoryblokApi = storyblokInit({
     button_link: Button,
     text_banner: TextBanner,
     headline: Headline,
+    call_to_action: CallToAction,
   },
   enableFallbackComponent: true,
 });

@@ -34,16 +34,6 @@ export interface ButtonLinkStoryblok {
   [k: string]: any;
 }
 
-export interface FeatureStoryblok {
-  headline: string;
-  content: string;
-  button?: Exclude<MultilinkStoryblok, {linktype?: "email"} | {linktype?: "asset"}>;
-  link_title?: string;
-  _uid: string;
-  component: "feature";
-  [k: string]: any;
-}
-
 export interface AssetStoryblok {
   _uid?: string;
   id: number | null;
@@ -59,6 +49,26 @@ export interface AssetStoryblok {
     [k: string]: any;
   };
   is_external_url?: boolean;
+  [k: string]: any;
+}
+
+export interface CallToActionStoryblok {
+  image?: AssetStoryblok;
+  headline?: string;
+  button?: ButtonLinkStoryblok[];
+  orientation?: "" | "default" | "right";
+  _uid: string;
+  component: "call_to_action";
+  [k: string]: any;
+}
+
+export interface FeatureStoryblok {
+  headline: string;
+  content: string;
+  button?: Exclude<MultilinkStoryblok, {linktype?: "email"} | {linktype?: "asset"}>;
+  link_title?: string;
+  _uid: string;
+  component: "feature";
   [k: string]: any;
 }
 
@@ -93,6 +103,7 @@ export interface FooterItemLinkStoryblok {
 export interface GlobalStoryblok {
   global?: (
     | ButtonLinkStoryblok
+    | CallToActionStoryblok
     | FeatureStoryblok
     | FooterStoryblok
     | FooterItemStoryblok
@@ -183,6 +194,7 @@ export interface LegalLinkStoryblok {
 
 export interface PageStoryblok {
   blocks?: (
+    | CallToActionStoryblok
     | FeatureStoryblok
     | GridStoryblok
     | HeaderMenuItemStoryblok

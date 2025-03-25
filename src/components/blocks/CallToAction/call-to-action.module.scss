@@ -1,0 +1,55 @@
+@use "@/styles/helpers" as *;
+
+.wrapper {
+  @include desktop {
+    height: rem(500);
+  }
+
+  @include tablet {
+    height: rem(400);
+  }
+
+  height: rem(600);
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+}
+
+.content {
+  @include mobile {
+    grid-template-columns: 1fr;
+  }
+
+  position: absolute;
+  top: 0;
+
+  display: grid;
+
+  width: 100%;
+  padding: $padding-md $margin-contained;
+
+  color: var(--text-high);
+
+  gap: $spacing-xlg $grid-6;
+  grid-template-columns: 1fr 1fr;
+
+  > * {
+    grid-column: 1;
+  }
+}
+
+.headline {
+  @extend %h1;
+}
+
+.right {
+  > * {
+    @include mobile {
+      grid-column: 1;
+    }
+
+    grid-column: 2;
+  }
+}
