@@ -1,9 +1,5 @@
 @use "@/styles/helpers" as *;
 
-.wrapper {
-  padding: var(--padding-sm) var(--margin-contained);
-}
-
 .headline {
     @include desktop {
       gap: $padding-xlg;
@@ -29,6 +25,10 @@
   
     gap: rem(80);
     grid-column: span 4;
+
+    padding: 0 var(--margin-contained);
+    font-weight: $bold-font-weight;
+
   
     &::after {
       width: 100%;

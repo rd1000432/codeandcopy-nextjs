@@ -18,17 +18,17 @@ interface BlokItem {
 interface GridBlok {
   headline: string;
   items: BlokItem[];
-  [key: string]: any; // Add this index signature to allow other properties (for compatibility with SbBlokData)
+  [key: string]: any; 
 }
 
 interface GridProps {
   blok: GridBlok;
 }
 const Grid: FC<GridProps> = ({ blok }: GridProps) => { 
+
   return (
     <section {...storyblokEditable(blok)} className={styles.gridSection}>
       <div className={styles.container}>
-        {/* <h2 className={styles.headline}>{blok.headline}</h2> */}
         <div className={styles.gridContainer}>
           {blok.items.map((blokItem) => (
             <div key={blokItem._uid} className={styles.gridItem}>
@@ -37,7 +37,12 @@ const Grid: FC<GridProps> = ({ blok }: GridProps) => {
               {blokItem.button && blokItem.link_title && (
                 <Button
                   label={blokItem.button}
-                  link={{ cached_url: blokItem.link_title, title: blokItem.link_title, _uid: '', component: 'button_link' } as ButtonLinkStoryblok}
+                  link={{
+                    cached_url: blokItem.button,
+                    title: blokItem.link_title, 
+                    _uid: '',
+                    component: 'button_link'
+                  } as ButtonLinkStoryblok}
                   className={styles.buttonGrid}
                   style="borderless"
                 />

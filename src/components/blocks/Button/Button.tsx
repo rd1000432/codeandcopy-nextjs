@@ -1,10 +1,11 @@
 "use client";
 import cn from "classnames";
-import { type FC, useCallback, useRef } from "react";
+import { type FC } from "react";
 
-import { LinkWrapper } from "@/components/common";
+import Link from "next/link";
 import { IconArrow } from "@/icons";
 import type { MultilinkStoryblok } from "@/storyblok/component-types-sb";
+import { stripHome } from "@/helpers/stripHome";
 
 import styles from "./button.module.scss";
 
@@ -14,13 +15,19 @@ type Props = {
   color?: "default" | "highlight" | "light" | "";
   style?: "default" | "borderless" | "";
   className?: string;
-  onClick?: () => void;
   [key: string]: any;
 };
 
 export const Button: FC<Props> = props => {
-  const { title, link, style = "default", color = "default", className, onClick, ...rest } = props;
-  const ref = useRef<HTMLButtonElement>(null);
+  const { title, link, style = "default", color = "default", className } = props;
+
+  const normalizeUrl = (link?: MultilinkStoryblok) => {
+    const url = link?.cached_url || ""; // Ensure it's a string
+
+    if (!url) return "/";
+    const strippedUrl = stripHome(url);
+    return strippedUrl.startsWith("/") ? strippedUrl : `/${strippedUrl}`;
+  };
 
   const linkClassname = cn(
     styles.button,
@@ -32,25 +39,14 @@ export const Button: FC<Props> = props => {
     className
   );
 
-  const onClickCallback = useCallback(() => {
-    if (onClick) {
-      onClick();
-    }
-    setTimeout(() => ref.current?.blur());
-  }, [onClick]);
-
-  // Ensure we check that `title` and `link.cached_url` exist before rendering the button
   if (!title && (!link?.cached_url || !link?.title)) {
     return null;
   }
 
   return (
-    <LinkWrapper
-      link={link}
-      className={linkClassname}
-      onClick={onClick ? onClickCallback : undefined}
-      forwardRef={ref}
-      {...rest}
+    <Link
+    className={linkClassname} 
+    href={normalizeUrl(link?.cached_url || "/")}
     >
       {title || link?.title || "Default Button Title"}
       <IconArrow
@@ -58,6 +54,6 @@ export const Button: FC<Props> = props => {
           [styles.light]: color === "light",
         })}
       />
-    </LinkWrapper>
+    </Link>
   );
 };

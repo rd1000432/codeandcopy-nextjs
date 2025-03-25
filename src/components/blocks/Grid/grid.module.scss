@@ -7,8 +7,7 @@
     padding-top: $padding-sm;
     padding-bottom: $padding-sm;
   }
-    background-color: $gray-100; // Equivalent to 'bg-blue-100'
-    padding: var(--padding-xlg) var(--margin-contained) calc(var(--padding-xlg) - var(--padding-sm)) var(--margin-contained);
+    padding: var(--padding-md) var(--margin-contained) calc(var(--padding-xlg) - var(--padding-sm)) var(--margin-contained);
   }
   
   .container {
@@ -30,7 +29,6 @@
     @include mobile {
       grid-template-columns: 1fr;
     }
-    margin-top: 3rem;
     display: grid;
     grid-template-columns: repeat(3, 1fr); 
     gap: 2rem;
@@ -41,6 +39,9 @@
     text-decoration: underline!important;
     @include mobile {
       max-width: 70%;
+    }
+    svg {
+      color: $code-pink-100;
     }
   }
   

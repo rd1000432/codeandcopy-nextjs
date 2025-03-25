@@ -120,7 +120,6 @@ export interface GlobalStoryblok {
 }
 
 export interface GridStoryblok {
-  headline?: string;
   items: (FeatureStoryblok | TestimonialStoryblok)[];
   _uid: string;
   component: "grid";
@@ -147,7 +146,6 @@ export interface HeaderMenuItemStoryblok {
 
 export interface HeadlineStoryblok {
   headline?: string;
-  extraPadding: boolean;
   _uid: string;
   component: "headline";
   [k: string]: any;
@@ -203,7 +201,6 @@ export interface PageStoryblok {
 }
 
 export interface RecommendedServicesStoryblok {
-  headline: string;
   services: (StoryblokStory<ServicesStoryblok> | string)[];
   _uid: string;
   component: "recommended_services";

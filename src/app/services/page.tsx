@@ -1,4 +1,4 @@
-import { RecommendedService } from "@/components/blocks/RecommendedService";
+import { RecommendedService } from "@/components/blocks/RecommendedServices/components/RecommendedService";
 import { getStoryblokApi } from "@/storyblok";
 import { StoryblokStory } from "@storyblok/react/rsc";
 
