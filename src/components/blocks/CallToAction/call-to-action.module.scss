@@ -10,6 +10,8 @@
   }
 
   height: rem(600);
+  position: relative;
+  margin-bottom: calc(var(--padding-xlg) - var(--padding-sm));
 }
 
 .image {
@@ -30,7 +32,7 @@
   width: 100%;
   padding: $padding-md $margin-contained;
 
-  color: var(--text-high);
+  color: white;
 
   gap: $spacing-xlg $grid-6;
   grid-template-columns: 1fr 1fr;
@@ -51,5 +53,14 @@
     }
 
     grid-column: 2;
+  }
+}
+
+.CTAButton {
+  background-color: $turquoise-100;
+  color: $dark!important;
+  border-color: $dark!important;
+  svg {
+    color: $dark!important;
   }
 }

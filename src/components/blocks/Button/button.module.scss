@@ -11,7 +11,7 @@
 
   transition: all 0.2s linear;
 
-  color: $light; // var(--highlight-color)
+  color: $light;
 }
 
 .button {
@@ -30,7 +30,7 @@
   gap: rem(20);
 
   &:hover {
-    text-decoration: none;
+    text-decoration: none!important;
 
     .icon {
       clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
@@ -44,7 +44,7 @@
     width: 100%;
   }
 
-  border: 2px solid $light; //var(--highlight-color-transparent-light)
+  border: 2px solid $light; 
   padding-right: $padding-lg;
   padding-left: $padding-lg;
 }

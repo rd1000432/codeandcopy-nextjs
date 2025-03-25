@@ -1,1 +1,53 @@
 @use "@/styles/helpers.scss" as *;
+
+.wrapper {
+  &:hover .image {
+    border: 2px solid $code-pink-100;
+    cursor: pointer;
+  }
+}
+
+.image {
+  border: 2px solid transparent;
+}
+
+.serviceTitle {
+  margin-top: $spacing-md;
+}
+
+.serviceLink {
+  @extend %button;
+
+  align-items: center;
+
+  display: flex;
+
+  width: fit-content;
+  padding-top: rem(12);
+  padding-bottom: rem(12);
+  text-decoration: underline;
+
+  gap: rem(20);
+
+  &:hover {
+    text-decoration: none;
+
+    .icon {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+  }
+}
+
+.icon {
+    flex-shrink: 0;
+  
+    display: flex;
+  
+    clip-path: polygon(0 0, 50% 0, 50% 100%, 0% 100%);
+  
+    width: rem(47);
+  
+    transition: all 0.2s linear;
+  
+    color: $code-pink-100;
+  }

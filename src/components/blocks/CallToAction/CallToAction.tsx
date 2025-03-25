@@ -3,7 +3,7 @@ import cn from "classnames";
 import type { FC } from "react";
 
 import { Button } from "@/components/common";
-import type { CallToActionStoryblok } from "@/storyblok/component-types-sb";
+import type { CallToActionStoryblok, ButtonLinkStoryblok } from "@/storyblok/component-types-sb";
 
 import styles from "./call-to-action.module.scss";
 
@@ -18,24 +18,13 @@ const CallToAction: FC<CallToActionStoryblok> =  ({ blok }) => {
     <section
       className={styles.wrapper}
     >
-      {/* <LXImage
-        src={image?.filename}
-        alt={""}
-        className={styles.image}
-        smart
-        focus={image.focus}
-        role="presentation"
-        width={1920}
-        sizes="100vw"
-      /> */}
         <Image
-        className={styles.backgroundImage}
+        className={styles.image}
         src={image?.filename}
         alt={""}
         role="presentation"
         width={1920}
         height={1080}
-        sizes="100vw"
         />
       <div
         className={cn(styles.content, {
@@ -43,7 +32,12 @@ const CallToAction: FC<CallToActionStoryblok> =  ({ blok }) => {
         })}
       >
         {headline && <p className={styles.headline}>{headline}</p>}
-        {button && <Button link={button.link} title={button.title} />}
+        {button && 
+        <Button 
+         link={{ cached_url: button.link, title: button.title, _uid: '', component: 'button_link' } as ButtonLinkStoryblok}
+         title={button.title}
+         className={styles.CTAButton} />
+         }
       </div>
     </section>
   );

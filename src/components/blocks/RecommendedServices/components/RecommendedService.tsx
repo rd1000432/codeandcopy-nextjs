@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import styles from './recommended-service.module.scss';
+import { IconArrow } from "@/icons";
+
 
 interface StoryContent {
   main_image?: { filename: string };
@@ -20,13 +22,17 @@ export const RecommendedService = ({ story }: RecommendedServiceProps) => {
   const fullSlug = story.full_slug || "default-slug";
 
   return (
-    <div>
-      <img src={story.content.main_image?.filename} />
+    <div className={styles.wrapper}>
+      <img className={styles.image} src={story.content.main_image?.filename} />
       <div>
-        <div><h3>{story.content.lead_text}</h3></div>
+        <h3 className={styles.serviceTitle}>{story.content.lead_text}</h3>
       </div>
-      <p>{story.content.field}</p>
-      <Link className={styles.serviceLink} href={`/${fullSlug}`}>Learn more</Link>
+      {/* <p>{story.content.field}</p> */}
+      <Link className={styles.serviceLink} href={`/${fullSlug}`}>Learn more
+      <IconArrow
+        className={styles.icon}
+      />
+      </Link>
     </div>
   );
 };

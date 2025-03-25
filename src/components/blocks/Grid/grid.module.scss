@@ -36,7 +36,7 @@
 
   .buttonGrid {
     color: black!important;
-    text-decoration: underline!important;
+    text-decoration: underline;
     @include mobile {
       max-width: 70%;
     }
