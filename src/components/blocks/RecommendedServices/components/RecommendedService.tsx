@@ -23,7 +23,9 @@ export const RecommendedService = ({ story }: RecommendedServiceProps) => {
 
   return (
     <div className={styles.wrapper}>
-      <img className={styles.image} src={story.content.main_image?.filename} />
+      <Link className={styles.imageLink} href={`/${fullSlug}`}>
+        <img className={styles.image} src={story.content.main_image?.filename} />
+      </Link>
       <div>
         <h3 className={styles.serviceTitle}>{story.content.lead_text}</h3>
       </div>
