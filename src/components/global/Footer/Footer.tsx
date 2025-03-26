@@ -1,12 +1,8 @@
-/* eslint-disable sonarjs/no-duplicate-string */
-// import { LXImage } from "@lx-media/lx-image";
 import { storyblokEditable } from "@storyblok/react";
 import type { FC } from "react";
 
-// import { LinkWrapper } from "@/components/common";
 import Link from "next/link";
 
-// import { LXFooterIcon } from "@/icons";
 import Logo from "@/icons/Logo.inline.svg";
 import Image from "next/image";
 import type { FooterStoryblok } from "@/storyblok/component-types-sb";
@@ -41,7 +37,7 @@ const Footer: FC<{ blok: FooterStoryblok }> = ({ blok }) => {
               </div>
             ))}
           <div className={styles.column}>
-            <Logo className={styles.footerLogo} />
+            <Logo className={styles.footerIcon} />
           </div>
         </div>
       </div>

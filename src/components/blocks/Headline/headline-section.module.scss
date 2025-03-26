@@ -26,7 +26,7 @@
     gap: rem(80);
     grid-column: span 4;
 
-    padding: 0 var(--margin-contained);
+    padding: $padding-xlg var(--margin-contained) 0 var(--margin-contained);
     font-weight: $bold-font-weight;
 
   

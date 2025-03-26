@@ -57,6 +57,9 @@
 }
 
 .CTAButton {
+  @include mobile{
+    max-width: 70%;
+  }
   background-color: $turquoise-100;
   color: $dark!important;
   border-color: $dark!important;

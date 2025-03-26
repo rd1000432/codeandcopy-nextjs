@@ -124,7 +124,11 @@
 }
 
 .footerIcon {
+  @include mobile {
+    max-height: rem(50);
+  }
   margin-left: auto;
+  max-height: rem(70);
 }
 
 .legalLink {
