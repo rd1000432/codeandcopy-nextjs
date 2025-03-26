@@ -7,6 +7,7 @@ import type { FC } from "react";
 import Link from "next/link";
 
 // import { LXFooterIcon } from "@/icons";
+import Logo from "@/icons/Logo.inline.svg";
 import Image from "next/image";
 import type { FooterStoryblok } from "@/storyblok/component-types-sb";
 
@@ -17,7 +18,7 @@ import { stripHome } from "@/helpers/stripHome";
 
 const Footer: FC<{ blok: FooterStoryblok }> = ({ blok }) => {
 
-  const { copyright, legal_links, social_links, main_column, footer_logo } = blok;
+  const { copyright, legal_links, social_links, main_column } = blok;
 
     const normalizeUrl = (url: string) => {
       if (!url) return "/";
@@ -40,17 +41,7 @@ const Footer: FC<{ blok: FooterStoryblok }> = ({ blok }) => {
               </div>
             ))}
           <div className={styles.column}>
-            {footer_logo && (
-             <Image
-             className={styles.footerIcon}
-             src={footer_logo.filename}
-             alt={footer_logo.alt || "Logo"}
-             width={150}
-             height={50} 
-             priority
-             aria-hidden="true"
-         />
-        )}
+            <Logo className={styles.footerLogo} />
           </div>
         </div>
       </div>

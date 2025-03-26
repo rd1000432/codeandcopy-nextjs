@@ -29,6 +29,7 @@
   display: grid;
 
   grid-template-columns: 4fr 1fr;
+ 
 }
 
 .column {
@@ -47,6 +48,7 @@
   gap: $padding-lg;
 
   grid-column: span 1;
+  color: $light;
 }
 
 .bottomLine {

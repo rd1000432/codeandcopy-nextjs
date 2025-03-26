@@ -84,7 +84,6 @@ export interface FeatureStoryblok {
 }
 
 export interface FooterStoryblok {
-  footer_logo?: AssetStoryblok;
   main_column?: FooterItemStoryblok[];
   social_links?: SocialLinkStoryblok[];
   legal_links?: LegalLinkStoryblok[];

@@ -26,10 +26,12 @@
 }
 
 .logoIcon {
+  @include mobile {
+    margin-left: rem(-15);
+  }
   width: 100%;
   max-height: rem(60);
   color: currentColor;
-  
 }
 
 
@@ -45,5 +47,5 @@
 }
 
 .mobileMenuOpen {
-  background-color: #000; 
+  background-color: $dark; 
 }
