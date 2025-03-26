@@ -16,7 +16,7 @@ interface StoryContent {
   
   interface Props {
     blok: {
-      services: Story[]; // Use the Story type for services
+      services: Story[];
     };
   }
 

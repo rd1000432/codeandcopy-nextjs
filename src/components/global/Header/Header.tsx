@@ -11,6 +11,7 @@ import HeaderNavigation from "./components/HeaderNavigation";
 import BurgerButton from "./components/BurgerButton";
 import { stripHome } from "@/helpers/stripHome";
 import cn from "classnames";
+import Logo from "@/icons/Logo.inline.svg";
 
 
 type HeaderProps = {
@@ -22,7 +23,7 @@ type HeaderProps = {
 };
 
 const Header: FC<HeaderProps> = props => {
-  const { blok, isDraftMode, logo_small} = props;
+  const { blok, isDraftMode} = props;
   const { isMobileMenuOpen, toggleMenu, closeMenu } = useHeader();
   const [scrolledPastHero, setScrolledPastHero] = useState(false);
 
@@ -39,7 +40,7 @@ const Header: FC<HeaderProps> = props => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const heroHeight = Math.min(500, window.innerHeight);
+      const heroHeight = Math.min(50, window.innerHeight);
       setScrolledPastHero(window.scrollY > heroHeight);
     };
 
@@ -58,24 +59,8 @@ const Header: FC<HeaderProps> = props => {
       {/* Logo */}
       <div className={styles.logo}>
       <Link className={styles.logoLink} href={normalizeUrl(blok.homepage_link?.cached_url || "/")}>
-      {blok.logo && (
-            <Image
-              src={blok.logo.filename}
-              alt={blok.logo.alt || "Logo"}
-              width={150}
-              height={50} 
-              priority
-            />
-          )}
+          <Logo className={styles.logoIcon} />
         </Link>
-        {logo_small && (
-          <Image
-            src={logo_small.filename}
-            alt={logo_small.alt || "Small Logo"}
-            width={50}
-            height={50} 
-          />
-        )}
       </div>
       <BurgerButton onClick={toggleMenu} isOpen={isMobileMenuOpen} />
       {/* Navigation Menu */}

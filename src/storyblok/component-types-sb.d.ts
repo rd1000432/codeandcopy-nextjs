@@ -62,6 +62,17 @@ export interface CallToActionStoryblok {
   [k: string]: any;
 }
 
+export interface ContactCtaStoryblok {
+  image?: AssetStoryblok;
+  name?: string;
+  position?: string;
+  mail_link?: Exclude<MultilinkStoryblok, {linktype?: "email"} | {linktype?: "asset"}>;
+  button?: ButtonLinkStoryblok[];
+  _uid: string;
+  component: "contact_CTA";
+  [k: string]: any;
+}
+
 export interface FeatureStoryblok {
   headline: string;
   content: string;
@@ -104,6 +115,7 @@ export interface GlobalStoryblok {
   global?: (
     | ButtonLinkStoryblok
     | CallToActionStoryblok
+    | ContactCtaStoryblok
     | FeatureStoryblok
     | FooterStoryblok
     | FooterItemStoryblok
@@ -138,8 +150,6 @@ export interface GridStoryblok {
 }
 
 export interface HeaderStoryblok {
-  logo?: AssetStoryblok;
-  logo_small?: AssetStoryblok;
   homepage_link?: Exclude<MultilinkStoryblok, {linktype?: "email"} | {linktype?: "asset"}>;
   menu_items?: HeaderMenuItemStoryblok[];
   _uid: string;
@@ -195,6 +205,7 @@ export interface LegalLinkStoryblok {
 export interface PageStoryblok {
   blocks?: (
     | CallToActionStoryblok
+    | ContactCtaStoryblok
     | FeatureStoryblok
     | GridStoryblok
     | HeaderMenuItemStoryblok

@@ -22,11 +22,14 @@
 
 .logoLink {
   height: $grid-10;
+  color: $light;
 }
 
-.logo {
+.logoIcon {
   width: 100%;
-  height: 100%;
+  max-height: rem(60);
+  color: currentColor;
+  
 }
 
 
@@ -38,7 +41,7 @@
     a {
       color: white;
     }
-  } 
+  }
 }
 
 .mobileMenuOpen {
