@@ -40,6 +40,8 @@
 
 .bordered {
   @include mobile {
+    padding-right: $padding-sm;
+    padding-left: $padding-sm;
     justify-content: center;
     width: 100%;
   }
