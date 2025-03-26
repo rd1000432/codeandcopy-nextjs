@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 import { storyblokEditable } from "@storyblok/react/rsc";
 import type { FC } from "react";
 import type { HeaderStoryblok } from "@/storyblok/component-types-sb";
-import Image from "next/image";
 import Link from "next/link";
 import styles from "./header.module.scss";
 import { useHeader } from "./hooks/useHeader";
@@ -60,7 +59,7 @@ const Header: FC<HeaderProps> = props => {
       <div className={styles.logo}>
       <Link className={styles.logoLink} href={normalizeUrl(blok.homepage_link?.cached_url || "/")}>
           <Logo className={styles.logoIcon} />
-        </Link>
+      </Link>
       </div>
       <BurgerButton onClick={toggleMenu} isOpen={isMobileMenuOpen} />
       {/* Navigation Menu */}
