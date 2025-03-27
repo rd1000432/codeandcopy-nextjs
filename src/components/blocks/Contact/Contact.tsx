@@ -3,7 +3,7 @@ import type { FC } from "react";
 import Image from "next/image";
 
 import { Button } from "@/components/common";
-import type { ContactStoryblok } from "@/storyblok/component-types-sb";
+import type { ContactStoryblok, ButtonLinkStoryblok } from "@/storyblok/component-types-sb";
 
 import styles from "./contact.module.scss";
 
@@ -23,9 +23,8 @@ const Contact: FC<Props> = ({ blok }) => {
             src={image?.filename}
             alt={image.alt ?? ""}
             className={styles.image}
-            fill
-            width={0}
-            sizes="50vw, 100vw"
+            width={600}
+            height={600}
           />
         </div>
       )}
@@ -39,7 +38,12 @@ const Contact: FC<Props> = ({ blok }) => {
             </a>
           )}
         </div>
-        {button && <Button className={styles.button} {...button} style="solid" type="icon" />}
+        {button && 
+        <Button 
+         link={{ cached_url: button.link, title: button.title, _uid: '', component: 'button_link' } as ButtonLinkStoryblok}
+         title={button.title}
+         className={styles.button} />
+         }
       </div>
     </section>
   );

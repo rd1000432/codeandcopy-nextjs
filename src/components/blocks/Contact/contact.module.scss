@@ -12,10 +12,10 @@
   grid-template-columns: 1fr 1fr;
 }
 
-.image-wrapper {
+.imageWrapper {
   position: relative;
   overflow: hidden;
-  height: var(--content-height-sm);
+  // height: var(--content-height-sm);
 }
 
 .image {
@@ -44,9 +44,14 @@
 
 .button {
   margin: 0 var(--text-padding);
+  color: $dark!important;
+  border-color: $dark!important;
+  svg {
+    color: $dark!important;
+  }
 }
 
-.phone-link {
+.phoneLink {
   @extend %body-sm;
 }
 
