@@ -1,4 +1,5 @@
 import { apiPlugin, storyblokInit } from "@storyblok/react/rsc";
+import Contact from "./components/blocks/Contact/Contact";
 import { Service } from "./components/blocks/Service";
 import { Page } from "./components/blocks/Page";
 import Hero from "./components/blocks/Hero";
@@ -41,6 +42,7 @@ export const getStoryblokApi = storyblokInit({
     text_banner: TextBanner,
     headline: Headline,
     call_to_action: CallToAction,
+    contact: Contact,
   },
   enableFallbackComponent: true,
 });

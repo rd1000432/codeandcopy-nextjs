@@ -62,6 +62,17 @@ export interface CallToActionStoryblok {
   [k: string]: any;
 }
 
+export interface ContactStoryblok {
+  image?: AssetStoryblok;
+  name?: string;
+  position?: string;
+  phone?: string;
+  button?: ButtonLinkStoryblok[];
+  _uid: string;
+  component: "contact";
+  [k: string]: any;
+}
+
 export interface ContactCtaStoryblok {
   image?: AssetStoryblok;
   name?: string;
@@ -114,6 +125,7 @@ export interface GlobalStoryblok {
   global?: (
     | ButtonLinkStoryblok
     | CallToActionStoryblok
+    | ContactStoryblok
     | ContactCtaStoryblok
     | FeatureStoryblok
     | FooterStoryblok
@@ -204,6 +216,7 @@ export interface LegalLinkStoryblok {
 export interface PageStoryblok {
   blocks?: (
     | CallToActionStoryblok
+    | ContactStoryblok
     | ContactCtaStoryblok
     | FeatureStoryblok
     | GridStoryblok

@@ -153,6 +153,62 @@
       "component_group_name": "Nestable blocks"
     },
     {
+      "name": "contact",
+      "display_name": null,
+      "description": "",
+      "created_at": "2025-03-27T18:46:51.093Z",
+      "updated_at": "2025-03-27T18:48:18.723Z",
+      "id": 7138721,
+      "schema": {
+        "image": {
+          "type": "asset",
+          "pos": 0,
+          "id": "X6W97bIHTuCeDNh6HFrihA"
+        },
+        "name": {
+          "type": "text",
+          "pos": 1,
+          "id": "irZru4oBTs2mt-PBfrTRaA"
+        },
+        "position": {
+          "type": "text",
+          "pos": 2,
+          "id": "W1V-mkiLRGKinZVdhLRhHw"
+        },
+        "phone": {
+          "type": "text",
+          "pos": 3,
+          "id": "2UpiowbiRB6jN8333pedMg"
+        },
+        "button": {
+          "type": "bloks",
+          "pos": 4,
+          "maximum": 1,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "button_link"
+          ],
+          "id": "xrWwmPR2TyS0nQdKGu1M0Q"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "contact",
+      "component_group_uuid": "46060bef-a421-41d9-9c44-567227184725",
+      "color": "#2db47d",
+      "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "component_group_name": "Nestable blocks"
+    },
+    {
       "name": "contact_CTA",
       "display_name": null,
       "description": "",

@@ -1,0 +1,55 @@
+@use "@/styles/helpers" as *;
+
+.wrapper {
+  @include mobile {
+    grid-template-columns: 1fr;
+  }
+
+  display: grid;
+
+  gap: var(--col-gutter);
+
+  grid-template-columns: 1fr 1fr;
+}
+
+.image-wrapper {
+  position: relative;
+  overflow: hidden;
+  height: var(--content-height-sm);
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+}
+
+.content {
+  flex-direction: column;
+  justify-content: center;
+
+  display: flex;
+
+  padding: var(--block-padding) var(--block-padding) var(--padding-md) var(--block-padding);
+
+  gap: var(--spacing-md);
+}
+
+.text {
+  flex-direction: column;
+  display: flex;
+  padding: var(--text-padding);
+
+  gap: var(--spacing-xsm);
+}
+
+.button {
+  margin: 0 var(--text-padding);
+}
+
+.phone-link {
+  @extend %body-sm;
+}
+
+.phone {
+  text-decoration: underline;
+}
