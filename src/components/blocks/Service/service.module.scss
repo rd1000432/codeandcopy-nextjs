@@ -8,10 +8,6 @@
     margin: 0 auto;
 }
 
-.test {
-    font-size: rem(2);
-    font-weight: $bold-font-weight;
-}
 
 .mainImage {
     margin-top: rem(3); // Equivalent to 'mt-12'
@@ -19,11 +15,12 @@
     height: auto;
 }
 
-.fieldText {
-    margin-top: rem(3); // Equivalent to 'mt-12'
-    font-size: $bold-font-weight; // Equivalent to 'text-lg'
-    line-height: 1.75rem; // Equivalent to 'md:text-2xl md:leading-relaxed'
-}
+.fieldText  {
+    @extend %h1-hero;
+
+    color: $light;
+    font-weight: $bold-font-weight;
+  }
 
 .description {
     margin-top: 3rem; // Similar margin for richtext
@@ -32,6 +29,16 @@
 }
 
 .hero {
-    height: 200px;
-    background-color: $dark;
+    min-height: rem(200);
+    background-color: $black-100;
+    padding: calc($padding-xlg + $grid-10 + rem(72)) $margin-contained $padding-md;
+
+    
+    .button {
+        color: $dark;
+    
+        svg {
+        color: $dark;
+        }
+    }
 }

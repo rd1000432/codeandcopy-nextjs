@@ -7,7 +7,7 @@ export const Service = (props: any) => {
     return (
         <>
         <section className={styles.hero}>
-            p.
+        {field && <h2 className={styles.fieldText}>{field}</h2>}
         </section>
         <section className={styles.serviceContainer}>
            {lead_text && <h1 className={styles.test}>{lead_text}</h1>}
