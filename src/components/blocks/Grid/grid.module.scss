@@ -1,7 +1,5 @@
 @use "@/styles/helpers" as *;
 
-// grid.module.scss
-
 .gridSection {
   @include mobile {
     padding-top: $padding-sm;
@@ -18,20 +16,30 @@
   }
   
   .headline {
-    font-size: 1.875rem; // Equivalent to 'text-3xl'
-    font-weight: bold;
-    @media (min-width: 768px) {
-      font-size: 2.25rem; // Equivalent to 'md:text-4xl'
-    }
+    @extend %h3;
   }
   
   .gridContainer {
-    @include mobile {
-      grid-template-columns: 1fr;
-    }
     display: grid;
-    grid-template-columns: repeat(3, 1fr); 
     gap: 2rem;
+  
+    &.twoColumns {
+      @include desktop {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      @include mobile {
+        grid-template-columns: 1fr;
+      }
+    }
+  
+    &.threeColumns {
+      @include desktop {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      @include mobile {
+        grid-template-columns: 1fr;
+      }
+    }
   }
 
   .buttonGrid {

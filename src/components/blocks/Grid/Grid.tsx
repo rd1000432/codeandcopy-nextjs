@@ -7,6 +7,7 @@ import type { ButtonLinkStoryblok } from "@/storyblok/component-types-sb";
 
 import styles from './grid.module.scss';
 import { Button } from "../Button/Button";
+import cn from "classnames";
 
 
 interface BlokItem {
@@ -29,7 +30,10 @@ const Grid: FC<GridProps> = ({ blok }: GridProps) => {
   return (
     <section {...storyblokEditable(blok)} className={styles.gridSection}>
       <div className={styles.container}>
-        <div className={styles.gridContainer}>
+        <div className={cn(styles.gridContainer, {
+            [styles.twoColumns]: blok.items.length === 2,
+            [styles.threeColumns]: blok.items.length === 3
+        })}>
           {blok.items.map((blokItem) => (
             <div key={blokItem._uid} className={styles.gridItem}>
               <StoryblokServerComponent blok={blokItem} />
