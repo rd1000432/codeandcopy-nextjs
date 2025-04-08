@@ -6,8 +6,9 @@ import { type FC } from "react"; // useRef
 
 import { getIsActive } from "@/helpers/getIsActive";
 import { stripHome } from "@/helpers/stripHome";
+import Image from "next/image";
 
-import type { HeaderStoryblok } from "@/storyblok/component-types-sb";
+import type { FooterStoryblok, HeaderStoryblok } from "@/storyblok/component-types-sb";
 
 // import LanguageSwitcher from "../LanguageSwitcher";
 import styles from "./header-navigation.module.scss";
@@ -17,8 +18,9 @@ const HeaderNavigation: FC<{
   blok: HeaderStoryblok;
   isMobileMenuOpen?: boolean;
   isDraftMode?: boolean;
+  footer: FooterStoryblok;
   closeMenu?: () => void; 
-}> = ({ blok, isMobileMenuOpen, closeMenu }) => {
+}> = ({ blok, isMobileMenuOpen, footer, closeMenu }) => {
   const pathName = usePathname();
 
   const normalizeUrl = (url: string) => {
@@ -30,7 +32,8 @@ const HeaderNavigation: FC<{
   
     return absoluteUrl === "" ? "/" : absoluteUrl; // Ensures "/" remains if `/home` was the only thing in the URL
   };
-  
+
+  console.log("HeaderNavigation", footer);
   
 
   return (
@@ -53,6 +56,33 @@ const HeaderNavigation: FC<{
               </Link>
             </li>
           ))}
+          <div className={cn(styles.footerLinks, styles.legalLinks)}>
+            {footer.legal_links?.map((link, index) => (
+              <Link
+                href={normalizeUrl(link.link?.cached_url || "")}
+                key={index}
+              >
+                {link.title}
+              </Link>
+            ))}
+        </div>
+        <div className={cn(styles.footerLinks, styles.socialLinks)}>
+          {footer.social_links?.map((link, index) =>
+            link.link && link.icon ? (
+              <Link
+              href={normalizeUrl(link.link?.cached_url || "")}
+                key={index}
+              >
+                <Image
+                  src={link.icon.filename}
+                  alt={link.icon.alt || `Link to ${link.title || "social media"}`}
+                  width={44}
+                  height={44}
+                  />
+              </Link>
+            ) : null
+          )}
+        </div>
       </ul>
     </nav>
   );

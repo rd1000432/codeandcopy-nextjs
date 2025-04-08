@@ -1,31 +1,44 @@
 @use "@/styles/helpers.scss" as *;
 
-// service.module.scss
-
 .serviceContainer {
     width: 100%;
     padding: $padding-lg $margin-contained;
     margin: 0 auto;
 }
 
+.leadText {
+    @extend %h2;
+
+    color: $dark;
+    font-weight: $bold-font-weight;
+    margin-bottom: $spacing-lg;
+}
+
 
 .mainImage {
-    margin-top: rem(3); // Equivalent to 'mt-12'
+    margin-top: rem(3);
     max-width: 100%;
     height: auto;
 }
 
-.fieldText  {
+.heroText  {
     @extend %h1-hero;
 
     color: $light;
     font-weight: $bold-font-weight;
   }
 
+.fieldText  {
+    @extend %h2;
+
+    color: $dark;
+    font-weight: $bold-font-weight;
+    margin-top: $spacing-lg;
+}
+
 .description {
-    margin-top: 3rem; // Similar margin for richtext
-    font-size: 1rem; // Default font size for the description
-    line-height: 1.5rem;
+    margin-top: $spacing-md; 
+    font-size: $body-font-size; 
 }
 
 .hero {

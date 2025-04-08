@@ -140,6 +140,7 @@
 
 .legalLinks {
   @extend %button-label;
+  color: $white-100;
 
   flex-direction: column;
 

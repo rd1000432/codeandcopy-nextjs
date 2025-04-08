@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import { storyblokEditable } from "@storyblok/react/rsc";
 import type { FC } from "react";
-import type { HeaderStoryblok } from "@/storyblok/component-types-sb";
+import type { HeaderStoryblok, FooterStoryblok } from "@/storyblok/component-types-sb";
 import Link from "next/link";
 import styles from "./header.module.scss";
 import { useHeader } from "./hooks/useHeader";
@@ -15,6 +15,7 @@ import Logo from "@/icons/Logo.inline.svg";
 
 type HeaderProps = {
   blok: HeaderStoryblok;
+  footer: FooterStoryblok;
   isDraftMode: boolean;
   homepage_link?: { cached_url: string };
   logo?: { filename: string; alt?: string };
@@ -22,10 +23,9 @@ type HeaderProps = {
 };
 
 const Header: FC<HeaderProps> = props => {
-  const { blok, isDraftMode} = props;
+  const { blok, isDraftMode, footer} = props;
   const { isMobileMenuOpen, toggleMenu, closeMenu } = useHeader();
   const [scrolledPastHero, setScrolledPastHero] = useState(false);
-
 
   const normalizeUrl = (url: string) => {
     if (!url) return "/";
@@ -36,6 +36,8 @@ const Header: FC<HeaderProps> = props => {
   
     return absoluteUrl === "" ? "/" : absoluteUrl; // Ensures "/" remains if `/home` was the only thing in the URL
   };
+
+  console.log("Footer in Header:", footer);  // Check if this outputs expected content
 
   useEffect(() => {
     const handleScroll = () => {
@@ -68,7 +70,8 @@ const Header: FC<HeaderProps> = props => {
           isMobileMenuOpen={isMobileMenuOpen}
           isDraftMode={isDraftMode}
           closeMenu={closeMenu}
-        />
+          footer={footer || {}} 
+          />
     </header>
   );
 };

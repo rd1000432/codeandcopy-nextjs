@@ -7,11 +7,11 @@ export const Service = (props: any) => {
     return (
         <>
         <section className={styles.hero}>
-        {field && <h2 className={styles.fieldText}>{field}</h2>}
+          {field && <h2 className={styles.heroText}>{field}</h2>}
         </section>
         <section className={styles.serviceContainer}>
-           {lead_text && <h1 className={styles.test}>{lead_text}</h1>}
-            {main_image && <img className={styles.mainImage} src={main_image.filename} alt="Main Image" />}
+            {lead_text && <h1 className={styles.leadText}>{lead_text}</h1>}
+            {main_image && <img className={styles.mainImage} src={main_image.filename} />}
             {field && <p className={styles.fieldText}>{field}</p>}
             {body && <Richtext className={styles.description} text={body} />}
         </section>

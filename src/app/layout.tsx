@@ -59,7 +59,7 @@ export default async function RootLayout({
       : "published",
   });
 
-  footerContent = footerData.story.content.global[0];
+  footerContent = footerData?.story?.content?.global?.[0] || null;
 
   if (!footerContent) {
     console.warn("Footer content is missing or undefined.");
@@ -76,7 +76,7 @@ export default async function RootLayout({
         >
           {/* Render the Header */}
           {headerContent ? (
-            <Header blok={headerContent} isDraftMode={isEnabled} />
+            <Header blok={headerContent} footer={footerContent} isDraftMode={isEnabled} />
           ) : (
             <div>Loading Header...</div>
           )}
