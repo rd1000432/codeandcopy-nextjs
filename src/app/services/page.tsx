@@ -1,6 +1,7 @@
 import { RecommendedService } from "@/components/blocks/RecommendedServices/components/RecommendedService";
 import { getStoryblokApi } from "@/storyblok";
 import { StoryblokStory } from "@storyblok/react/rsc";
+import styles from "./services.module.scss"
 
 const fetchServicesPage = async () => {
   const client = getStoryblokApi();
@@ -26,8 +27,8 @@ const ServicesPage = async () => {
   return (
     <div>
         <StoryblokStory story={story} />
-        <div className="grid md:grid-cols-2 gap-8 container mx-auto px-4 w-full py-16">
-      {services?.map((service: any) => (
+        <div className={styles.servicesContainer}>
+        {services?.map((service: any) => (
           <RecommendedService story={service} key={service.uuid} />
         ))}
         </div>

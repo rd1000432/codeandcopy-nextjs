@@ -2,7 +2,6 @@ import { FC } from "react";
 import { RecommendedService } from "./components/RecommendedService";
 import styles from "./recommended-services.module.scss";
 
-// Define the required types for the Story content and Story
 interface StoryContent {
     main_image: { filename: string };
     lead_text: string;
