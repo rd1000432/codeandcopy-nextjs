@@ -9,7 +9,6 @@ import styles from './grid.module.scss';
 import { Button } from "../Button/Button";
 import cn from "classnames";
 
-
 interface BlokItem {
   _uid: string;
   button?: string;

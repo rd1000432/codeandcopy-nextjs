@@ -31,10 +31,7 @@ const HeaderNavigation: FC<{
     const absoluteUrl = strippedUrl.startsWith("/") ? strippedUrl : `/${strippedUrl}`;
   
     return absoluteUrl === "" ? "/" : absoluteUrl; // Ensures "/" remains if `/home` was the only thing in the URL
-  };
-
-  console.log("HeaderNavigation", footer);
-  
+  };  
 
   return (
   

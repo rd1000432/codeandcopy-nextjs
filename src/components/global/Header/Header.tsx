@@ -37,8 +37,6 @@ const Header: FC<HeaderProps> = props => {
     return absoluteUrl === "" ? "/" : absoluteUrl; // Ensures "/" remains if `/home` was the only thing in the URL
   };
 
-  console.log("Footer in Header:", footer);  // Check if this outputs expected content
-
   useEffect(() => {
     const handleScroll = () => {
       const heroHeight = Math.min(50, window.innerHeight);
