@@ -59,6 +59,8 @@ export default async function RootLayout({
       : "published",
   });
 
+  console.log("Fetched Footer story:", footerData);
+
   footerContent = footerData?.story?.content?.global?.[0] || null;
 
   if (!footerContent) {

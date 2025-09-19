@@ -24,9 +24,7 @@
     gap: 2rem;
   
     &.twoColumns {
-      @include desktop {
-        grid-template-columns: repeat(2, 1fr);
-      }
+      grid-template-columns: repeat(2, 1fr);
       @include mobile {
         grid-template-columns: 1fr;
       }
