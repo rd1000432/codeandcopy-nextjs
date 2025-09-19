@@ -4,7 +4,7 @@ import { Service } from "./components/blocks/Service";
 import { Page } from "./components/blocks/Page";
 import Hero from "./components/blocks/Hero";
 import Grid from "./components/blocks/Grid";
-import { Feature } from "./components/blocks/Feature";
+import Feature from "./components/blocks/Feature";
 import { Testimonial } from "./components/blocks/Testimonial";
 import  RecommendedServices from "./components/blocks/RecommendedServices";
 import TextIcon from "./components/blocks/TextIcon";
