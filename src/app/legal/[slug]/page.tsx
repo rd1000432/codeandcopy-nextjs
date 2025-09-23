@@ -1,20 +1,18 @@
 import { getStoryblokApi } from "@/storyblok";
 import { StoryblokStory } from "@storyblok/react/rsc";
 
-// Fetches all the static params for the legal page
 export const generateStaticParams = async () => {
   const client = getStoryblokApi();
   const response = await client.getStories({
-    content_type: "legal",
+    content_type: "legal_page", // Make sure this matches your content type!
     version: process.env.NODE_ENV === "development" ? "draft" : "published",
   });
 
   return response.data.stories.map((story) => ({
-    slug: story.slug,
+    slug: story.slug.replace("legal/", ""), // strip the "legal/" prefix for routing
   }));
 };
 
-// Fetch the specific legal page data
 const fetchLegalPage = async (slug: string) => {
   const client = getStoryblokApi();
   const response = await client.getStory(`legal/${slug}`, {
@@ -24,19 +22,15 @@ const fetchLegalPage = async (slug: string) => {
 };
 
 interface PageProps {
-  params: Promise<{ slug: string }>; // Ensure params is awaited
+  params: { slug: string };
 }
 
 const LegalPage = async ({ params }: PageProps) => {
-  // Await params to ensure it's resolved before accessing slug
-  const resolvedParams = await params;
-
-  if (!resolvedParams?.slug) {
+  if (!params?.slug) {
     return <div>Error: Missing slug</div>;
   }
 
-
-  const story = await fetchLegalPage(resolvedParams.slug);
+  const story = await fetchLegalPage(params.slug);
   return <StoryblokStory story={story} />;
 };
 

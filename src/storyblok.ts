@@ -31,6 +31,7 @@ export const getStoryblokApi = storyblokInit({
   },
   components: {
     services: Service,
+    legal_page: LegalPage,
     page: Page,
     hero: Hero,
     grid: Grid,
@@ -44,7 +45,6 @@ export const getStoryblokApi = storyblokInit({
     headline: Headline,
     call_to_action: CallToAction,
     contact: Contact,
-    legal_page: LegalPage,
   },
   enableFallbackComponent: true,
 });

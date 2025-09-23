@@ -17,7 +17,6 @@ interface FeatureProps {
 const Feature = ({ blok }: FeatureProps) => {
   const { headline, content } = blok;
 
-  console.log("Feature blok:", blok);
 
   return (
     <div {...storyblokEditable(blok)}  className={styles.feature}>

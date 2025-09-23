@@ -2,8 +2,7 @@ import Richtext from "../RichtextSection/components/Richtext/Richtext";
 import styles from "./legal.module.scss";
 
 export const LegalPage = (props: any) => {
-    const { lead_text, body } = props.blok;
-    
+    const { lead_text, body } = props.blok;    
     return (
         <>
         <section className={styles.hero}>

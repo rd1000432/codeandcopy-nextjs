@@ -84,9 +84,18 @@ export interface ContactCtaStoryblok {
   [k: string]: any;
 }
 
+export interface RichtextStoryblok {
+  type: string;
+  content?: RichtextStoryblok[];
+  marks?: RichtextStoryblok[];
+  attrs?: any;
+  text?: string;
+  [k: string]: any;
+}
+
 export interface FeatureStoryblok {
   headline: string;
-  content: string;
+  content?: RichtextStoryblok;
   button?: Exclude<MultilinkStoryblok, {linktype?: "email"} | {linktype?: "asset"}>;
   link_title?: string;
   _uid: string;
@@ -138,6 +147,7 @@ export interface GlobalStoryblok {
     | HeadlineStoryblok
     | HeroStoryblok
     | LegalLinkStoryblok
+    | LegalPageStoryblok
     | PageStoryblok
     | RecommendedServicesStoryblok
     | RichtextSectionStoryblok
@@ -183,15 +193,6 @@ export interface HeadlineStoryblok {
   [k: string]: any;
 }
 
-export interface RichtextStoryblok {
-  type: string;
-  content?: RichtextStoryblok[];
-  marks?: RichtextStoryblok[];
-  attrs?: any;
-  text?: string;
-  [k: string]: any;
-}
-
 export interface HeroStoryblok {
   background_option: "" | "image" | "video" | "none";
   background_image?: AssetStoryblok;
@@ -213,22 +214,19 @@ export interface LegalLinkStoryblok {
   [k: string]: any;
 }
 
+export interface LegalPageStoryblok {
+  hero?: HeroStoryblok[];
+  lead_text?: string;
+  body?: RichtextStoryblok;
+  _uid: string;
+  component: "legal_page";
+  [k: string]: any;
+}
+
 export interface PageStoryblok {
-  blocks?: (
-    | CallToActionStoryblok
-    | ContactStoryblok
-    | ContactCtaStoryblok
-    | FeatureStoryblok
-    | GridStoryblok
-    | HeaderMenuItemStoryblok
-    | HeadlineStoryblok
-    | HeroStoryblok
-    | RecommendedServicesStoryblok
-    | RichtextSectionStoryblok
-    | TestimonialStoryblok
-    | TextBannerStoryblok
-    | TextIconStoryblok
-  )[];
+  blocks?: HeroStoryblok[];
+  lead_text?: string;
+  body?: RichtextStoryblok;
   _uid: string;
   component: "page";
   uuid?: string;

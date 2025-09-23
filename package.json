@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "dotenv-test": " dotenv cross-var \"echo STORYBLOK_SPACE_ID %STORYBLOK_SPACE_ID%\"",
-    "generate-sb-types:mac": "cd src/storyblok/ && npx storyblok pull-components --space=326651 && npx storyblok-generate-ts source=components.326651.json target=component-types-sb"
+    "generate-sb-types": "npx storyblok components pull --space 326651 && npx storyblok-generate-ts source=src/storyblok/.storyblok/components/326651/components.json target=src/storyblok/component-types-sb.ts"
   },
   "dependencies": {
     "@storyblok/react": "^4.4.0",
