@@ -1,1 +1,42 @@
 @use "@/styles/helpers" as *;
+
+.serviceContainer {
+    width: 100%;
+    padding: $padding-lg $margin-contained;
+    margin: 0 auto;
+}
+
+.leadText {
+    @extend %h2;
+
+    color: $dark;
+    font-weight: $bold-font-weight;
+    margin-bottom: $spacing-lg;
+}
+
+.heroText  {
+    @extend %h1-hero;
+
+    color: $light;
+    font-weight: $bold-font-weight;
+  }
+
+.description {
+    margin-top: $spacing-md; 
+    font-size: $body-font-size; 
+}
+
+.hero {
+    min-height: rem(200);
+    background-color: $black-100;
+    padding: calc($padding-xlg + $grid-10 + rem(72)) $margin-contained $padding-md;
+
+    
+    .button {
+        color: $dark;
+    
+        svg {
+        color: $dark;
+        }
+    }
+}
