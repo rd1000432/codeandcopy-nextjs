@@ -13,6 +13,7 @@ import { Button } from "./components/blocks/Button";
 import  TextBanner from "./components/blocks/TextBanner/TextBanner";
 import Headline from "./components/blocks/Headline/Headline";
 import CallToAction from "./components/blocks/CallToAction";
+import { LegalPage } from "./components/blocks/Legal/Legal";
 
 const cachedFetch = (input: any, init?: any): Promise<Response> => {
   return fetch(input, {
@@ -43,6 +44,7 @@ export const getStoryblokApi = storyblokInit({
     headline: Headline,
     call_to_action: CallToAction,
     contact: Contact,
+    legal_page: LegalPage,
   },
   enableFallbackComponent: true,
 });
