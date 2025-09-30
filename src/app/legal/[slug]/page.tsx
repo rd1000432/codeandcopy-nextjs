@@ -17,27 +17,25 @@ export const generateStaticParams = async () => {
 
 const fetchLegalPage = async (slug: string) => {
   const client = getStoryblokApi();
-  const response = await client.getStory(`legal/${slug}`, {
-    version: process.env.NODE_ENV === "development" ? "draft" : "published",
-  });
-  return response.data.story;
+  try {
+    const response = await client.getStory(`legal/${slug}`, {
+      version: process.env.NODE_ENV === "development" ? "draft" : "published",
+    });
+    return response.data.story;
+  } catch {
+    // Gracefully handle missing story
+    return null;
+  }
 };
 
 export default async function LegalPage(props: { params: Promise<{ slug: string }> }) {
-  const { params } = props;
+  const { slug } = await props.params;
 
-  // ✅ Await params before using
-  const { slug } = await params;
-
-  if (!slug) {
-    return <div>Error: Missing slug</div>;
-  }
+  if (!slug) return <div>Missing slug</div>;
 
   const story = await fetchLegalPage(slug);
 
-  if (!story) {
-    return <div>Page not found</div>;
-  }
+  if (!story) return <div>Page not found</div>;
 
   return <StoryblokStory story={story} />;
 }
