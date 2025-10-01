@@ -58,6 +58,7 @@ const HeaderNavigation: FC<{
               <Link
                 href={normalizeUrl(link.link?.cached_url || "")}
                 key={index}
+                onClick={closeMenu}
               >
                 {link.title}
               </Link>
@@ -68,7 +69,8 @@ const HeaderNavigation: FC<{
             link.link && link.icon ? (
               <Link
               href={normalizeUrl(link.link?.cached_url || "")}
-                key={index}
+              key={index}
+              onClick={closeMenu}
               >
                 <Image
                   src={link.icon.filename}
